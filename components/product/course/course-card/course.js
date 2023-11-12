@@ -24,7 +24,7 @@ export default function Card({
             <img
               className={style['product-image']}
               src={imageSrc}
-              alt="Product Image"
+              alt="oasis"
             />
           </Link>
         </div>

@@ -21,7 +21,7 @@ const CardComponent2 = ({ hideFeatures = false }) => {
             </div>
             <div className={styles.cardBody}>
               <p className={styles.cardTitle}>
-                Taipei "An Pu. Time to Sleep" Tour
+                Taipei &quot;An Pu. Time to Sleep&quot; Tour
               </p>
               <p className={styles.cardText}>
                 Time is the love of my life, and many years have passed...

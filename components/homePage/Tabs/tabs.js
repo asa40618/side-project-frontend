@@ -30,13 +30,13 @@ class VerticalTabs extends Component {
                 aria-orientation="vertical"
               >
                 <a
-                  className={`nav-link mb-3 p-2 shadow ${
-                    activeTab === 'v-pills-home' ? 'active' : ''
-                  }`}
+                  className={`nav-link mb-3 p-2 shadow ${activeTab === 'v-pills-home' ? 'active' : ''
+                    }`}
                   onClick={() => this.setActiveTab('v-pills-home')}
                   role="tab"
                   aria-controls="v-pills-home"
                   aria-selected={activeTab === 'v-pills-home'}
+                  aria-hidden="true"
                 >
                   <i className="fa fa-user-circle-o mr-2"></i>
                   <span className="font-weight-bold small text-uppercase">
@@ -44,13 +44,13 @@ class VerticalTabs extends Component {
                   </span>
                 </a>
                 <a
-                  className={`nav-link mb-3 p-2 shadow ${
-                    activeTab === 'v-pills-two' ? 'active' : ''
-                  }`}
+                  className={`nav-link mb-3 p-2 shadow ${activeTab === 'v-pills-two' ? 'active' : ''
+                    }`}
                   onClick={() => this.setActiveTab('v-pills-two')}
                   role="tab"
                   aria-controls="v-pills-two"
                   aria-selected={activeTab === 'v-pills-two'}
+                  aria-hidden="true"
                 >
                   <i className="fa fa-star mr-2"></i>
                   <span className="font-weight-bold small text-uppercase">
@@ -58,13 +58,13 @@ class VerticalTabs extends Component {
                   </span>
                 </a>
                 <a
-                  className={`nav-link mb-3 p-2 shadow ${
-                    activeTab === 'v-pills-three' ? 'active' : ''
-                  }`}
+                  className={`nav-link mb-3 p-2 shadow ${activeTab === 'v-pills-three' ? 'active' : ''
+                    }`}
                   onClick={() => this.setActiveTab('v-pills-three')}
                   role="tab"
                   aria-controls="v-pills-three"
                   aria-selected={activeTab === 'v-pills-three'}
+                  aria-hidden="true"
                 >
                   <i className="fa fa-star mr-2"></i>
                   <span className="font-weight-bold small text-uppercase">
@@ -72,13 +72,13 @@ class VerticalTabs extends Component {
                   </span>
                 </a>
                 <a
-                  className={`nav-link mb-3 p-2 shadow ${
-                    activeTab === 'v-pills-four' ? 'active' : ''
-                  }`}
+                  className={`nav-link mb-3 p-2 shadow ${activeTab === 'v-pills-four' ? 'active' : ''
+                    }`}
                   onClick={() => this.setActiveTab('v-pills-four')}
                   role="tab"
                   aria-controls="v-pills-four"
                   aria-selected={activeTab === 'v-pills-four'}
+                  aria-hidden="true"
                 >
                   <i className="fa fa-star mr-2"></i>
                   <span className="font-weight-bold small text-uppercase">
@@ -86,13 +86,13 @@ class VerticalTabs extends Component {
                   </span>
                 </a>
                 <a
-                  className={`nav-link mb-3 p-2 shadow ${
-                    activeTab === 'v-pills-five' ? 'active' : ''
-                  }`}
+                  className={`nav-link mb-3 p-2 shadow ${activeTab === 'v-pills-five' ? 'active' : ''
+                    }`}
                   onClick={() => this.setActiveTab('v-pills-five')}
                   role="tab"
                   aria-controls="v-pills-five"
                   aria-selected={activeTab === 'v-pills-five'}
+                  aria-hidden="true"
                 >
                   <i className="fa fa-star mr-2"></i>
                   <span className="font-weight-bold small text-uppercase">
@@ -104,9 +104,8 @@ class VerticalTabs extends Component {
             <div className="col-9">
               <div className="tab-content">
                 <div
-                  className={`tab-pane show  ${
-                    styles.albumProductCardContainer
-                  } ${activeTab === 'v-pills-home' ? 'active' : ''}`}
+                  className={`tab-pane show  ${styles.albumProductCardContainer
+                    } ${activeTab === 'v-pills-home' ? 'active' : ''}`}
                   role="tabpanel"
                 >
                   <Link
@@ -117,9 +116,8 @@ class VerticalTabs extends Component {
                   </Link>
                 </div>
                 <div
-                  className={`tab-pane show  ${
-                    styles.albumProductCardContainer
-                  } ${activeTab === 'v-pills-two' ? 'active' : ''}`}
+                  className={`tab-pane show  ${styles.albumProductCardContainer
+                    } ${activeTab === 'v-pills-two' ? 'active' : ''}`}
                   role="tabpanel"
                 >
                   <Link
@@ -130,9 +128,8 @@ class VerticalTabs extends Component {
                   </Link>
                 </div>
                 <div
-                  className={`tab-pane show  ${
-                    styles.albumProductCardContainer
-                  } ${activeTab === 'v-pills-three' ? 'active' : ''}`}
+                  className={`tab-pane show  ${styles.albumProductCardContainer
+                    } ${activeTab === 'v-pills-three' ? 'active' : ''}`}
                   role="tabpanel"
                 >
                   <Link
@@ -143,9 +140,8 @@ class VerticalTabs extends Component {
                   </Link>
                 </div>
                 <div
-                  className={`tab-pane show  ${
-                    styles.albumProductCardContainer
-                  } ${activeTab === 'v-pills-four' ? 'active' : ''}`}
+                  className={`tab-pane show  ${styles.albumProductCardContainer
+                    } ${activeTab === 'v-pills-four' ? 'active' : ''}`}
                   role="tabpanel"
                 >
                   <Link
@@ -156,9 +152,8 @@ class VerticalTabs extends Component {
                   </Link>
                 </div>
                 <div
-                  className={`tab-pane show  ${
-                    styles.albumProductCardContainer
-                  } ${activeTab === 'v-pills-five' ? 'active' : ''}`}
+                  className={`tab-pane show  ${styles.albumProductCardContainer
+                    } ${activeTab === 'v-pills-five' ? 'active' : ''}`}
                   role="tabpanel"
                 >
                   <Link

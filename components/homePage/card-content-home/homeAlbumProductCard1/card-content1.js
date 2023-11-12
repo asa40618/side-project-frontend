@@ -9,7 +9,7 @@ import TheFirstAlbumCover from '@/public/product/album/R-18911899-1622164711-589
 //CSS設定，放在同一層
 import styles from './style.module.scss'
 //收藏商品的toggle效果的js，放在子層
-import HeartToggle from './heart/heart-toggle'
+// import HeartToggle from './heart/heart-toggle'
 
 export default function HomeAlbumProductCard1() {
   return (
@@ -22,7 +22,7 @@ export default function HomeAlbumProductCard1() {
             width={450}
             height={450}
           />
-          <HeartToggle></HeartToggle>
+          {/* <HeartToggle></HeartToggle> */}
         </div>
         <div className="card-body text-white">
           <p className="card-text"> </p>

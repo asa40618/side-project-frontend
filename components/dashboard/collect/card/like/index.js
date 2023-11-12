@@ -41,7 +41,7 @@ export default function Like({ product, id, is_favorite }) {
     console.log(res)
   }
   return (
-    <span onClick={likeClick}>
+    <span onClick={likeClick} aria-hidden>
       {like ? <AiFillHeart type="button" /> : <AiOutlineHeart type="button" />}
     </span>
   )

@@ -23,7 +23,7 @@ export default function Card({
             <img
               className={style['product-image']}
               src="/product/course/course/hiphop.jpg"
-              alt="Product Image"
+              alt="oasis"
             />
           </Link>
         </div>

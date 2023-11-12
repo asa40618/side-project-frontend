@@ -9,7 +9,7 @@ export default function HomeCourseCard() {
           <img
             className={style['product-image']}
             src="/product/course/gutier1.jpg"
-            alt="Product Image"
+            alt="Guitar"
           />
         </div>
         <div className={style['product-details']}>

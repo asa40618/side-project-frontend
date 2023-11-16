@@ -85,7 +85,7 @@ export default function Category() {
       }
       // 發送 POST 請求到後端
       const response = await axios.post(
-        'http://localhost:3005/api/album/search',
+        'https://nodal-buckeye-404908.de.r.appspot.com/api/album/search',
         formData
       )
       setAlbumData(response.data)
@@ -121,7 +121,7 @@ export default function Category() {
       }
       // 發送 POST 請求到後端
       const response = await axios.post(
-        'http://localhost:3005/api/album/catego',
+        'https://nodal-buckeye-404908.de.r.appspot.com/api/album/catego',
         formData
       )
       setAlbumData(response.data)
@@ -188,7 +188,7 @@ export default function Category() {
   // // ttt
   useEffect(() => {
     // 使用 Fetch API 從 API 中獲取 JSON 資料
-    fetch('http://nodal-buckeye-404908.de.r.appspot.com/api/album/')
+    fetch('https://nodal-buckeye-404908.de.r.appspot.com/api/album/')
       .then((response) => response.json())
       .then((data) => {
         // data 是包含多個 album 資訊的陣列

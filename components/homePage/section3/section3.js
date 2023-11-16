@@ -41,7 +41,7 @@ export default function Section3() {
         >
           <SwiperSlide>
             <Link
-              href="http://localhost:3000/product/event-management/2"
+              href="https://side-project-frontend-iota.vercel.app/product/event-management/2"
               style={{ textDecoration: 'none' }}
             >
               <CardComponent4 hideFeatures={true} />
@@ -49,7 +49,7 @@ export default function Section3() {
           </SwiperSlide>
           <SwiperSlide>
             <Link
-              href="http://localhost:3000/product/event-management/14"
+              href="https://side-project-frontend-iota.vercel.app/product/event-management/14"
               style={{ textDecoration: 'none' }}
             >
               <CardComponent5 hideFeatures={true} />
@@ -57,7 +57,7 @@ export default function Section3() {
           </SwiperSlide>
           <SwiperSlide>
             <Link
-              href="http://localhost:3000/product/event-management/13"
+              href="https://side-project-frontend-iota.vercel.app/product/event-management/13"
               style={{ textDecoration: 'none' }}
             >
               <CardComponent6 hideFeatures={true} />
@@ -65,7 +65,7 @@ export default function Section3() {
           </SwiperSlide>
           <SwiperSlide>
             <Link
-              href="http://localhost:3000/product/event-management/50"
+              href="https://side-project-frontend-iota.vercel.app/product/event-management/50"
               style={{ textDecoration: 'none' }}
             >
               <CardComponent2 hideFeatures={true} />
@@ -73,7 +73,7 @@ export default function Section3() {
           </SwiperSlide>
           <SwiperSlide>
             <Link
-              href="http://localhost:3000/product/event-management/1"
+              href="https://side-project-frontend-iota.vercel.app/product/event-management/1"
               style={{ textDecoration: 'none' }}
             >
               <CardComponent3 hideFeatures={true} />
@@ -81,7 +81,7 @@ export default function Section3() {
           </SwiperSlide>
           <SwiperSlide>
             <Link
-              href="http://localhost:3000/product/event-management/14"
+              href="https://side-project-frontend-iota.vercel.app/product/event-management/14"
               style={{ textDecoration: 'none' }}
             >
               <CardComponent6 hideFeatures={true} />

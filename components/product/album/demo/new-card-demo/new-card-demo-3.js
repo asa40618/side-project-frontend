@@ -19,7 +19,7 @@ export default function NewCard() {
         className={`card ${styles.w230} ${styles.noBorder} img card-img-top rounded bg-black  p-2 `}
       >
         <div className={`${styles.imgWrap} rounded p-2`}>
-          <Link href={`http://localhost:3000/product/album/129`}>
+          <Link href={`https://side-project-frontend-iota.vercel.app/product/album/129`}>
             <Image
               className={`img card-img-top ${styles.w160} rounded`}
               src={DemoCard3}

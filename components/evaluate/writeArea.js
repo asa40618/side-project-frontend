@@ -14,7 +14,7 @@ export default function WriteArea({
   const orderCheck = async () => {
     try {
       const res = await fetch(
-        `http://127.0.0.1:3005/api/evaluate/orderCheck/${targetTableCondition}/${pid}`
+        `https://nodal-buckeye-404908.de.r.appspot.com/api/evaluate/orderCheck/${targetTableCondition}/${pid}`
       )
       const data = await res.json()
       // 設定到狀態中 -> 會觸發重新渲染(re-render)
@@ -33,7 +33,7 @@ export default function WriteArea({
   const commentCheck = async () => {
     try {
       const res = await fetch(
-        `http://127.0.0.1:3005/api/evaluate/commentCheck/${targetTableCondition}/${pid}`
+        `https://nodal-buckeye-404908.de.r.appspot.com/api/evaluate/commentCheck/${targetTableCondition}/${pid}`
       )
       const data = await res.json()
       // 設定到狀態中 -> 會觸發重新渲染(re-render)

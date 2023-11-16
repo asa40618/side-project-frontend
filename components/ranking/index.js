@@ -15,11 +15,11 @@ import Link from 'next/link'
 export default function Ranking() {
   // API 抓回來的資料 <Statistic title="Feedback" value={1128} prefix={<LikeOutlined />} />
   const [trackinfo, setTrackinfo] = useState([])
-  const [url, setUrl] = useState('http://localhost:3005/api/ranking/')
+  const [url, setUrl] = useState('https://nodal-buckeye-404908.de.r.appspot.com/api/ranking/')
   const getTrackinfo = async () => {
     try {
       const res = await fetch(url)
-      // const res = await fetch('http://localhost:3005/api/ranking/pop')
+      // const res = await fetch('https://nodal-buckeye-404908.de.r.appspot.com/api/ranking/pop')
       // console.log(res)
       const data = await res.json()
       // console.log(data)
@@ -168,7 +168,7 @@ export default function Ranking() {
             <SwiperSlide
               className="btn btn-secondary text-info"
               onClick={() => {
-                setUrl('http://localhost:3005/api/ranking/')
+                setUrl('https://nodal-buckeye-404908.de.r.appspot.com/api/ranking/')
                 getTrackinfo()
               }}
             >
@@ -177,7 +177,7 @@ export default function Ranking() {
             <SwiperSlide
               className="btn btn-secondary text-info"
               onClick={() => {
-                setUrl('http://localhost:3005/api/ranking/pop')
+                setUrl('https://nodal-buckeye-404908.de.r.appspot.com/api/ranking/pop')
                 getTrackinfo()
               }}
             >
@@ -186,7 +186,7 @@ export default function Ranking() {
             <SwiperSlide
               className="btn btn-secondary text-info"
               onClick={() => {
-                setUrl('http://localhost:3005/api/ranking/rock')
+                setUrl('https://nodal-buckeye-404908.de.r.appspot.com/api/ranking/rock')
                 getTrackinfo()
               }}
             >
@@ -195,7 +195,7 @@ export default function Ranking() {
             <SwiperSlide
               className="btn btn-secondary text-info"
               onClick={() => {
-                setUrl('http://localhost:3005/api/ranking/hiphop')
+                setUrl('https://nodal-buckeye-404908.de.r.appspot.com/api/ranking/hiphop')
                 getTrackinfo()
               }}
             >
@@ -204,7 +204,7 @@ export default function Ranking() {
             <SwiperSlide
               className="btn btn-secondary text-info"
               onClick={() => {
-                setUrl('http://localhost:3005/api/ranking/soul')
+                setUrl('https://nodal-buckeye-404908.de.r.appspot.com/api/ranking/soul')
                 getTrackinfo()
               }}
             >
@@ -213,7 +213,7 @@ export default function Ranking() {
             <SwiperSlide
               className="btn btn-secondary text-info"
               onClick={() => {
-                setUrl('http://localhost:3005/api/ranking/country')
+                setUrl('https://nodal-buckeye-404908.de.r.appspot.com/api/ranking/country')
                 getTrackinfo()
               }}
             >

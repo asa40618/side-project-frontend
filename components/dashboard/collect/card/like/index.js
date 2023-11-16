@@ -28,14 +28,14 @@ export default function Like({ product, id, is_favorite }) {
 
   const addLike = async () => {
     const res = await axios.put(
-      'http://127.0.0.1:3005/api/favorite/' + `${product}/${id}`,
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/' + `${product}/${id}`,
       { accessToken: Cookies.get('accessToken') }
     )
     console.log(res)
   }
   const removeLike = async () => {
     const res = await axios.put(
-      'http://127.0.0.1:3005/api/favorite/delete/' + `${product}/${id}`,
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/delete/' + `${product}/${id}`,
       { accessToken: Cookies.get('accessToken') }
     )
     console.log(res)

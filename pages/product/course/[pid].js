@@ -51,7 +51,7 @@ function PageEvent() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3005/api/course/${pid}`
+          `https://nodal-buckeye-404908.de.r.appspot.com/api/course/${pid}`
         )
         if (response.status === 200) {
           console.log(response.data)
@@ -66,7 +66,7 @@ function PageEvent() {
     const courseChapterData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3005/api/course/courseChapter/${pid}`
+          `https://nodal-buckeye-404908.de.r.appspot.com/api/course/courseChapter/${pid}`
         )
         if (response.status === 200) {
           console.log(response.data)
@@ -120,7 +120,7 @@ function PageEvent() {
     try {
       // 抓取此登入使用者的id
       const response = await axios.post(
-        'http://127.0.0.1:3005/api/favorite/my-favorite/course',
+        'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/my-favorite/course',
         {
           accessToken: Cookies.get('accessToken'),
         }
@@ -151,14 +151,14 @@ function PageEvent() {
   }, [eventData.course_id])
   const addLike = async () => {
     const res = await axios.put(
-      'http://127.0.0.1:3005/api/favorite/' + `course/${eventData.course_id}`,
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/' + `course/${eventData.course_id}`,
       { accessToken: Cookies.get('accessToken') }
     )
     // console.log(res)
   }
   const removeLike = async () => {
     const res = await axios.put(
-      'http://127.0.0.1:3005/api/favorite/delete/' +
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/delete/' +
         `course/${eventData.course_id}`,
       { accessToken: Cookies.get('accessToken') }
     )

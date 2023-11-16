@@ -19,7 +19,9 @@ export default function AlbumProductCard() {
         className={`p-3 bg-transparent mt-2 rounded ${styles.wrapper}   text-center`}
       >
         <div className={`${styles.imgwrap}`}>
-          <Link href={`http://localhost:3000/figure/singer/78`}>
+          <Link
+            href={`https://side-project-frontend-iota.vercel.app/figure/singer/78`}
+          >
             <Image
               className={`img card-img-top ${styles.w160} rounded-circle`}
               src={SingerCard1}

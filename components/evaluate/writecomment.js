@@ -32,7 +32,7 @@ export default function Writecomment({
     // 處理送出評論
     try {
       const response = await axios.post(
-        `http://localhost:3005/api/evaluate/${targetTableCondition}/${pid}`,
+        `https://nodal-buckeye-404908.de.r.appspot.com/api/evaluate/${targetTableCondition}/${pid}`,
         {
           member_id: userData.id,
           stars: userStars,

@@ -31,7 +31,7 @@ export default function Collect() {
   })
   // 取的user資料
   const getUserData = async (id) => {
-    const res = await axios.get('http://127.0.0.1:3005/api/users/' + `${id}`)
+    const res = await axios.get('https://nodal-buckeye-404908.de.r.appspot.com/api/users/' + `${id}`)
 
     if (res.data.message === 'success') {
       // console.log(res.data.user)
@@ -54,7 +54,7 @@ export default function Collect() {
   // 取得收藏專輯資料
   const getAlbumCollect = async (id) => {
     const res = await axios.get(
-      'http://127.0.0.1:3005/api/users/collect/album/' + `${id}`
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/users/collect/album/' + `${id}`
     )
     // console.log(res.data)
     setAlbumData(res.data)
@@ -62,7 +62,7 @@ export default function Collect() {
   // 取得收藏專活動資料
   const getCollectEvent = async (id) => {
     const res = await axios.get(
-      'http://127.0.0.1:3005/api/users/collect/event-management/' + `${id}`
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/users/collect/event-management/' + `${id}`
     )
     // console.log(res.data)
     setEventData(res.data)
@@ -70,7 +70,7 @@ export default function Collect() {
   // 取得收藏專課程資料
   const getCollectCourse = async (id) => {
     const res = await axios.get(
-      'http://127.0.0.1:3005/api/users/collect/course/' + `${id}`
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/users/collect/course/' + `${id}`
     )
     // console.log(res.data)
     setCourseData(res.data)

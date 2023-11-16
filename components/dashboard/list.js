@@ -14,7 +14,7 @@ const items = [
     label: (
       <>
         <CheckLinkBodyStyle
-          href="http://localhost:3000/dashboard/profile"
+          href="https://side-project-frontend-iota.vercel.app/dashboard/profile"
           // style={{ textDecoration: 'none' }}
         >
           個人資料
@@ -27,7 +27,7 @@ const items = [
     label: (
       <>
         <CheckLinkBodyStyle
-          href="http://localhost:3000/dashboard/collect"
+          href="https://side-project-frontend-iota.vercel.app/dashboard/collect"
           // style={{ textDecoration: 'none' }}
         >
           我的收藏
@@ -40,7 +40,7 @@ const items = [
     label: (
       <>
         <CheckLinkBodyStyle
-          href="http://localhost:3000/dashboard/order"
+          href="https://side-project-frontend-iota.vercel.app/dashboard/order"
           // style={{ textDecoration: 'none' }}
         >
           訂單查詢
@@ -53,7 +53,7 @@ const items = [
     label: (
       <>
         <CheckLinkBodyStyle
-          href="http://localhost:3000/dashboard/coupon"
+          href="https://side-project-frontend-iota.vercel.app/dashboard/coupon"
           // style={{ textDecoration: 'none' }}
         >
           折價卷
@@ -130,28 +130,28 @@ export default function List({ userData }) {
   const rsuiteMenu = (
     <>
       <CheckLinkBodyStyle
-        href="http://localhost:3000/dashboard/profile"
+        href="https://side-project-frontend-iota.vercel.app/dashboard/profile"
         // style={{ textDecoration: 'none' }}
       >
         個人資料
       </CheckLinkBodyStyle>
 
       <CheckLinkBodyStyle
-        href="http://localhost:3000/dashboard/collect"
+        href="https://side-project-frontend-iota.vercel.app/dashboard/collect"
         // style={{ textDecoration: 'none' }}
       >
         我的收藏
       </CheckLinkBodyStyle>
 
       <CheckLinkBodyStyle
-        href="http://localhost:3000/dashboard/order"
+        href="https://side-project-frontend-iota.vercel.app/dashboard/order"
         // style={{ textDecoration: 'none' }}
       >
         訂單查詢
       </CheckLinkBodyStyle>
 
       <CheckLinkBodyStyle
-        href="http://localhost:3000/dashboard/coupon"
+        href="https://side-project-frontend-iota.vercel.app/dashboard/coupon"
         // style={{ textDecoration: 'none' }}
       >
         折價卷

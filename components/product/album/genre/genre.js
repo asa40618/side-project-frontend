@@ -21,7 +21,7 @@ function AlbumCategories(props) {
   useEffect(() => {
     if (props.id) {
       axios
-        .get(`http://localhost:3005/api/album/${props.id}/categories`)
+        .get(`https://nodal-buckeye-404908.de.r.appspot.com/api/album/${props.id}/categories`)
         .then((response) => {
           // 將categoryId映射為音樂類型
           const mappedCategories = response.data.map((row) => ({

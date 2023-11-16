@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-// http://localhost:3000/test-module/like
+// https://side-project-frontend-iota.vercel.app/test-module/like
 // 卡片圖
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 
@@ -27,14 +27,16 @@ export default function Like() {
   }
   const addLike = async () => {
     const res = await axios.put(
-      'http://127.0.0.1:3005/api/favorite/' + `album/${pData.id}`,
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/' +
+        `album/${pData.id}`,
       { accessToken: Cookies.get('accessToken') }
     )
     // console.log(res)
   }
   const removeLike = async () => {
     const res = await axios.put(
-      'http://127.0.0.1:3005/api/favorite/delete/' + `album/${pData.id}`,
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/delete/' +
+        `album/${pData.id}`,
       { accessToken: Cookies.get('accessToken') }
     )
     // console.log(res)
@@ -45,7 +47,7 @@ export default function Like() {
       try {
         // 抓取此登入使用者的id
         const response = await axios.post(
-          'http://127.0.0.1:3005/api/favorite/my-favorite/album',
+          'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/my-favorite/album',
           {
             accessToken: Cookies.get('accessToken'),
           }

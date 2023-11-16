@@ -99,7 +99,7 @@ export default function ProfileContent() {
   }
   // 取的user資料
   const getUserData = async (id) => {
-    const res = await axios.get('http://127.0.0.1:3005/api/users/' + `${id}`)
+    const res = await axios.get('https://nodal-buckeye-404908.de.r.appspot.com/api/users/' + `${id}`)
 
     if (res.data.message === 'success') {
       console.log(res.data.user)
@@ -189,7 +189,7 @@ export default function ProfileContent() {
     formData.append('photo', selectedImage)
     try {
       const res = await axios.post(
-        'http://127.0.0.1:3005/api/users/upload',
+        'https://nodal-buckeye-404908.de.r.appspot.com/api/users/upload',
         formData,
         {
           headers: {
@@ -207,7 +207,7 @@ export default function ProfileContent() {
 
     // 更新會員資料
     const res = await axios.put(
-      'http://127.0.0.1:3005/api/users/' + `${id}`,
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/users/' + `${id}`,
 
       {
         userEditData,
@@ -233,7 +233,7 @@ export default function ProfileContent() {
 
     if (res.data.message === 'success') {
       const res = await axios.post(
-        'http://127.0.0.1:3005/api/member/login',
+        'https://nodal-buckeye-404908.de.r.appspot.com/api/member/login',
 
         {
           account: userData.account,

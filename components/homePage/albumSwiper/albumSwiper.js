@@ -20,7 +20,7 @@ export default function AlbumSwiper() {
       >
         <SwiperSlide>
           <Link
-            href="http://localhost:3000/product/album/84"
+            href="https://side-project-frontend-iota.vercel.app/product/album/84"
             style={{ textDecoration: 'none' }}
           >
             <HomeAlbumProductCard />
@@ -28,7 +28,7 @@ export default function AlbumSwiper() {
         </SwiperSlide>
         <SwiperSlide>
           <Link
-            href="http://localhost:3000/product/album/70"
+            href="https://side-project-frontend-iota.vercel.app/product/album/70"
             style={{ textDecoration: 'none' }}
           >
             <HomeAlbumProductCard2 />
@@ -36,7 +36,7 @@ export default function AlbumSwiper() {
         </SwiperSlide>
         <SwiperSlide>
           <Link
-            href="http://localhost:3000/product/album/51"
+            href="https://side-project-frontend-iota.vercel.app/product/album/51"
             style={{ textDecoration: 'none' }}
           >
             <HomeAlbumProductCard3 />

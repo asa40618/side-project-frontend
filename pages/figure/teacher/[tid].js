@@ -50,7 +50,7 @@ export default function Singer() {
   useEffect(() => {
     if (tid) {
       axios
-        .get(`http://localhost:3005/api/teacher/${tid}`)
+        .get(`https://nodal-buckeye-404908.de.r.appspot.com/api/teacher/${tid}`)
         .then((response) => {
           setTeacherData(response.data[0])
         })
@@ -58,7 +58,7 @@ export default function Singer() {
           console.error('Error:', error)
         })
       axios
-        .get(`http://localhost:3005/api/teacher/${tid}/courses`)
+        .get(`https://nodal-buckeye-404908.de.r.appspot.com/api/teacher/${tid}/courses`)
         .then((response) => {
           setCourseOfTeacher(response.data)
           // console.log(response.data)

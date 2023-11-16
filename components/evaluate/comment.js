@@ -33,7 +33,6 @@ export default function Comment({
                     {v.photo ? (
                       <Image
                         className={evaluateStyle.profilePhoto}
-                        // TODO要詢問後端圖片路徑
                         src={`/member/image/${v.photo}`}
                         alt="avatar"
                         width={38}

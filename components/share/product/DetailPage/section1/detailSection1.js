@@ -85,7 +85,7 @@ priceText="$1,990"
 //     const fetchData = async () => {
 //       try {
 //         const response = await axios.get(
-//           `http://localhost:3005/api/product/event-management/${id}`
+//           `https://nodal-buckeye-404908.de.r.appspot.com/api/product/event-management/${id}`
 //         )
 //         console.log(response.data)
 //         seteventData(response.data)

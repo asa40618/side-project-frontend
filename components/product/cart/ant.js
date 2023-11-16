@@ -88,7 +88,7 @@ const MyStepsComponent = () => {
     // console.log(handleAllPeopleReady);
     //傳送訂單到後端
     function sendOrder(orderData) {
-        axios.post(`http://localhost:3005/api/order`, orderData)
+        axios.post(`https://nodal-buckeye-404908.de.r.appspot.com/api/order`, orderData)
             .then((response) => {
                 console.log(`送資料到後端`, response.data)
                 localStorage.clear();

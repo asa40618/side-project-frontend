@@ -18,7 +18,7 @@ export default function EventManagement() {
 
   useEffect(() => {
     // 获取课程数据
-    fetch('http://localhost:3005/api/course')
+    fetch('https://nodal-buckeye-404908.de.r.appspot.com/api/course')
       .then((response) => response.json())
       .then((data) => {
         setCourseData(data)

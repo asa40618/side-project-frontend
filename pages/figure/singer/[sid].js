@@ -31,7 +31,7 @@ export default function Singer() {
   useEffect(() => {
     if (sid) {
       axios
-        .get(`http://localhost:3005/api/singer/${sid}`)
+        .get(`https://nodal-buckeye-404908.de.r.appspot.com/api/singer/${sid}`)
         .then((response) => {
           setSingerData(response.data[0])
         })

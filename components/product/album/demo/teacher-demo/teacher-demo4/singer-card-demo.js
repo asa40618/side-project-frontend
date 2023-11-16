@@ -23,7 +23,7 @@ export default function AlbumProductCard() {
           {/*  */}
           {/*  */}
           {/*  */}
-          <Link href={`http://localhost:3000/figure/teacher/18`}>
+          <Link href={`https://side-project-frontend-iota.vercel.app/figure/teacher/18`}>
             {/*  */}
             {/*  */}
             {/*  */}

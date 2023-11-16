@@ -43,7 +43,7 @@ export const AuthProviderJWT = ({ children }) => {
   // 得到我的最愛
   // const getFavorites = async () => {
   //   const res = await axios.get(
-  //     'http://localhost:3005/api/favorite/my-favorite',
+  //     'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/my-favorite',
   //     {
   //       withCredentials: true,
   //     }
@@ -80,7 +80,7 @@ export const AuthProviderJWT = ({ children }) => {
   // 檢查會員認証用
   const checkAuth = async () => {
     const res = await axios.post(
-      'http://localhost:3005/api/member/check-login',
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/member/check-login',
       { accessToken: Cookies.get('accessToken') },
       {
         withCredentials: true,

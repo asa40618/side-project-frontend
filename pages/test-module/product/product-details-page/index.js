@@ -8,7 +8,7 @@ import CartIcon from '@/public/product/album/icon/cart-icon.svg'
 import HeartDefaultIcon from '@/public/product/album/icon/heart-default-icon.svg'
 
 export default function ProductDetailsPageText() {
-  // http://localhost:3000/test-module/product/product-details-page
+  // https://side-project-frontend-iota.vercel.app/test-module/product/product-details-page
   const imageSrc = '/product/album/R-4444384-1540104232-3310.jpg'
 
   const mainContent = (

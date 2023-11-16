@@ -23,11 +23,12 @@ export default function Evaluate() {
   let pageVar = 4 // 每頁顯示幾筆資料
 
   const targetTableCondition = router.asPath.split('/')[2]
+  console.log("targetTableCondition", targetTableCondition)
   // 抓取評價資料庫資料
   const getProduct = async (pid) => {
     try {
       const res = await fetch(
-        `http://localhost:3005/api/evaluate/${targetTableCondition}/${pid}`
+        `https://nodal-buckeye-404908.de.r.appspot.com/api/evaluate/${targetTableCondition}/${pid}`
       )
       const data = await res.json()
       // 設定到狀態中 -> 會觸發重新渲染(re-render)

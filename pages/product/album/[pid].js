@@ -69,7 +69,7 @@ export default function First() {
   useEffect(() => {
     if (pid) {
       axios
-        .get(`http://localhost:3005/api/album/${pid}`)
+        .get(`https://nodal-buckeye-404908.de.r.appspot.com/api/album/${pid}`)
         .then((response) => {
           //mmm part2-start
           const mappedData = response.data[0]

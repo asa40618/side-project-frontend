@@ -49,7 +49,7 @@ export default function RegisterForm() {
   async function handleSubmit() {
     // console.log(formData)
     const res = await axios.post(
-      'http://127.0.0.1:3005/api/users',
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/users',
 
       {
         ...formData,

@@ -55,7 +55,7 @@ export default function CartPage({ totalAmount, setTotalAmount }) {
 
   useEffect(() => {
     // 在组件加载时获取優惠券数据
-    axios.get('http://localhost:3005/api/cart/coupon')
+    axios.get('https://nodal-buckeye-404908.de.r.appspot.com/api/cart/coupon')
       .then(response => {
         const couponsData = response.data;
         setCoupons(couponsData);

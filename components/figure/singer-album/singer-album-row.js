@@ -13,7 +13,7 @@ export default function SingerAlbumRow(props) {
   useEffect(() => {
     if (props.id) {
       axios
-        .get(`http://localhost:3005/api/singer/${props.id}/albums`)
+        .get(`https://nodal-buckeye-404908.de.r.appspot.com/api/singer/${props.id}/albums`)
         .then((response) => {
           setAlbumsOfSinger(response.data)
         })
@@ -30,7 +30,7 @@ export default function SingerAlbumRow(props) {
             <Link href={`/product/album/${album.id}`}>
               <Image
                 className={`img ${styles.coverSq}`}
-                src={`http://localhost:3000/product/album/${album.cover_image}`}
+                src={`https://side-project-frontend-iota.vercel.app/product/album/${album.cover_image}`}
                 alt="album-artist-album-title"
                 width={500} // 设置图片宽度
                 height={500} // 设置图片高度

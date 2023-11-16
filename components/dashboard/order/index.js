@@ -30,7 +30,7 @@ export default function Order() {
   const [data, setData] = useState({})
   // 取的user資料
   const getUserData = async (id) => {
-    const res = await axios.get('http://127.0.0.1:3005/api/users/' + `${id}`)
+    const res = await axios.get('https://nodal-buckeye-404908.de.r.appspot.com/api/users/' + `${id}`)
 
     if (res.data.message === 'success') {
       // console.log(res.data.user)
@@ -55,7 +55,7 @@ export default function Order() {
     // setData(result.data); // 更新数据
     // setTotalRows(result.totalRows); // 更新记录数量
     const res = await axios.get(
-      'http://127.0.0.1:3005/api/users/order/' + `${id}`
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/users/order/' + `${id}`
     )
     // console.log(res.data)
 

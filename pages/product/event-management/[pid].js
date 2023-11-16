@@ -46,7 +46,7 @@ function PageEvent() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3005/api/product/event-management/${id}`
+          `https://nodal-buckeye-404908.de.r.appspot.com/api/product/event-management/${id}`
         )
         console.log(response.data)
         seteventData(response.data)
@@ -84,7 +84,7 @@ function PageEvent() {
     try {
       // 抓取此登入使用者的id
       const response = await axios.post(
-        'http://127.0.0.1:3005/api/favorite/my-favorite/event',
+        'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/my-favorite/event',
         {
           accessToken: Cookies.get('accessToken'),
         }
@@ -115,14 +115,14 @@ function PageEvent() {
   }, [id])
   const addLike = async () => {
     const res = await axios.put(
-      'http://127.0.0.1:3005/api/favorite/' + `event/${id}`,
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/' + `event/${id}`,
       { accessToken: Cookies.get('accessToken') }
     )
     // console.log(res)
   }
   const removeLike = async () => {
     const res = await axios.put(
-      'http://127.0.0.1:3005/api/favorite/delete/' + `event/${id}`,
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/delete/' + `event/${id}`,
       { accessToken: Cookies.get('accessToken') }
     )
     // console.log(res)
@@ -171,14 +171,14 @@ function PageEvent() {
           <div className="d-none d-sm-block">
             <div className=" d-flex  justify-content-around  mt-2 mb-2 ms-1 me-1 ">
               <button className="btn btn-primary flex-fill  btn-lg me-2 " onClick={() => {
-              addTicket({
-                id: id,
-                price: price,
-                picture:`/product/event-management/eventBanner/${images}`,
-                quantity: 1,
-                name: names,
-              })
-            }}>
+                addTicket({
+                  id: id,
+                  price: price,
+                  picture: `/product/event-management/eventBanner/${images}`,
+                  quantity: 1,
+                  name: names,
+                })
+              }}>
                 加入購物車&nbsp;
                 <Image src={CartIcon} alt="cart-icon-dark" />
               </button>

@@ -109,7 +109,7 @@ class VerticalTabs extends Component {
                   role="tabpanel"
                 >
                   <Link
-                    href="http://localhost:3000/product/album/63"
+                    href="https://side-project-frontend-iota.vercel.app/product/album/63"
                     style={{ textDecoration: 'none' }}
                   >
                     <HomeAlbumProductCard4 />
@@ -121,7 +121,7 @@ class VerticalTabs extends Component {
                   role="tabpanel"
                 >
                   <Link
-                    href="http://localhost:3000/product/album/69"
+                    href="https://side-project-frontend-iota.vercel.app/product/album/69"
                     style={{ textDecoration: 'none' }}
                   >
                     <HomeAlbumProductCard5 />
@@ -133,7 +133,7 @@ class VerticalTabs extends Component {
                   role="tabpanel"
                 >
                   <Link
-                    href="http://localhost:3000/product/album/14"
+                    href="https://side-project-frontend-iota.vercel.app/product/album/14"
                     style={{ textDecoration: 'none' }}
                   >
                     <HomeAlbumProductCard6 />
@@ -145,7 +145,7 @@ class VerticalTabs extends Component {
                   role="tabpanel"
                 >
                   <Link
-                    href="http://localhost:3000/product/album/64"
+                    href="https://side-project-frontend-iota.vercel.app/product/album/64"
                     style={{ textDecoration: 'none' }}
                   >
                     <HomeAlbumProductCard7 />
@@ -157,7 +157,7 @@ class VerticalTabs extends Component {
                   role="tabpanel"
                 >
                   <Link
-                    href="http://localhost:3000/product/album/70"
+                    href="https://side-project-frontend-iota.vercel.app/product/album/70"
                     style={{ textDecoration: 'none' }}
                   >
                     <HomeAlbumProductCard2 />

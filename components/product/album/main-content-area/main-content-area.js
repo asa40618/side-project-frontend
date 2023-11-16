@@ -54,7 +54,7 @@ export default function MainContentArea({
     try {
       // 抓取此登入使用者的id
       const response = await axios.post(
-        'http://127.0.0.1:3005/api/favorite/my-favorite/album',
+        'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/my-favorite/album',
         {
           accessToken: Cookies.get('accessToken'),
         }
@@ -85,14 +85,14 @@ export default function MainContentArea({
   }, [id])
   const addLike = async () => {
     const res = await axios.put(
-      'http://127.0.0.1:3005/api/favorite/' + `album/${id}`,
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/' + `album/${id}`,
       { accessToken: Cookies.get('accessToken') }
     )
     // console.log(res)
   }
   const removeLike = async () => {
     const res = await axios.put(
-      'http://127.0.0.1:3005/api/favorite/delete/' + `album/${id}`,
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/delete/' + `album/${id}`,
       { accessToken: Cookies.get('accessToken') }
     )
     // console.log(res)

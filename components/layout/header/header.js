@@ -44,7 +44,7 @@ export default function Header() {
   // 登出
   async function logoutbtn() {
     const res = await axios.post(
-      'http://127.0.0.1:3005/api/member/logout',
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/member/logout',
       { accessToken: Cookies.get('accessToken') },
       {
         withCredentials: true, // save cookie in browser

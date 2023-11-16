@@ -22,7 +22,7 @@ export default function AlbumCatagory({ subtitle, genre }) {
         <div key={v} className="d-flex justify-content-center">
           <div className="ms-1">
             <Link
-              href={`http://localhost:3000/product/album?cate=${getCategoryId(
+              href={`https://side-project-frontend-iota.vercel.app/product/album?cate=${getCategoryId(
                 v
               )}`}
             >

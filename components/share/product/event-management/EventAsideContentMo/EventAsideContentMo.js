@@ -109,7 +109,7 @@ export default function EventAsideContentMoMo({
 // Axios call effect
 // useEffect(() => {
 //   axios
-//     .get('http://localhost:3005/api/product/event-management')
+//     .get('https://nodal-buckeye-404908.de.r.appspot.com/api/product/event-management')
 //     .then((response) => {
 //       const products = response.data.products
 

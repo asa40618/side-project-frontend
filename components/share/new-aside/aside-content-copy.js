@@ -1,4 +1,4 @@
-//http://localhost:3000/test-module/aside
+//https://side-project-frontend-iota.vercel.app/test-module/aside
 //
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
@@ -34,7 +34,7 @@ export default function AsideContent({
       }
       // 發送 POST 請求到後端
       const response = await axios.post(
-        'http://localhost:3005/api/album/search',
+        'https://nodal-buckeye-404908.de.r.appspot.com/api/album/search',
         formData
       )
       setAlbumData(response.data)

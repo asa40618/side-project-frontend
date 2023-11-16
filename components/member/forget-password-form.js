@@ -51,7 +51,7 @@ export default function ForgetPasswordForm() {
       return
     }
     const res = await axios.post(
-      'http://localhost:3005/api/reset-password/otp',
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/reset-password/otp',
       {
         email,
       }
@@ -73,7 +73,7 @@ export default function ForgetPasswordForm() {
     e.preventDefault()
 
     const res = await axios.post(
-      'http://localhost:3005/api/reset-password/reset',
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/reset-password/reset',
       {
         email,
         token,

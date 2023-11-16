@@ -18,7 +18,7 @@ export default function Section4() {
         <div className={styles.cardContainer}>
           <div className={styles.cardRow}>
             <Link
-              href="http://localhost:3000/product/course/1"
+              href="https://side-project-frontend-iota.vercel.app/product/course/1"
               style={{ textDecoration: 'none' }}
             >
               <HomeCourseCard />
@@ -26,7 +26,7 @@ export default function Section4() {
           </div>
           <div className={styles.cardRow}>
             <Link
-              href="http://localhost:3000/product/course/2"
+              href="https://side-project-frontend-iota.vercel.app/product/course/2"
               style={{ textDecoration: 'none' }}
             >
               <HomeCourseCard2 />
@@ -36,7 +36,7 @@ export default function Section4() {
         <div className={styles.cardContainer}>
           <div className={styles.cardRow}>
             <Link
-              href="http://localhost:3000/product/course/5"
+              href="https://side-project-frontend-iota.vercel.app/product/course/5"
               style={{ textDecoration: 'none' }}
             >
               <HomeCourseCard3 />
@@ -44,7 +44,7 @@ export default function Section4() {
           </div>
           <div className={styles.cardRow}>
             <Link
-              href="http://localhost:3000/product/course/9"
+              href="https://side-project-frontend-iota.vercel.app/product/course/9"
               style={{ textDecoration: 'none' }}
             >
               <HomeCourseCard4 />

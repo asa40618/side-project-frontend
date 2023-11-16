@@ -9,7 +9,7 @@ export default function Tracklist(props) {
   // kkk
   useEffect(() => {
     if (props.id) {
-      fetch(`http://localhost:3005/api/album/${props.id}/tracklist`)
+      fetch(`https://nodal-buckeye-404908.de.r.appspot.com/api/album/${props.id}/tracklist`)
         .then((response) => response.json())
         .then((data) => {
           setTracklist(data)

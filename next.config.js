@@ -10,7 +10,7 @@ const nextConfig = {
   //   return [
   //     {
   //       source: '/api/:path*',
-  //       destination: 'http://localhost:3005/:path*', // Proxy to Backend
+  //       destination: 'https://nodal-buckeye-404908.de.r.appspot.com/:path*', // Proxy to Backend
   //     },
   //   ]
   // },

@@ -188,7 +188,7 @@ export default function Category() {
   // // ttt
   useEffect(() => {
     // 使用 Fetch API 從 API 中獲取 JSON 資料
-    fetch('http://localhost:3005/api/album/')
+    fetch('http://nodal-buckeye-404908.de.r.appspot.com/api/album/')
       .then((response) => response.json())
       .then((data) => {
         // data 是包含多個 album 資訊的陣列

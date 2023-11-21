@@ -101,7 +101,7 @@ class VerticalTabs extends Component {
                 </a>
               </div>
             </div>
-            <div className="col-9">
+            <div className="col-md-9">
               <div className="tab-content">
                 <div
                   className={`tab-pane show  ${styles.albumProductCardContainer

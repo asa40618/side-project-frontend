@@ -1,15 +1,18 @@
 import React from 'react'
-import style from './course.module.scss'
+import style from '../HomeCourseCard/course.module.scss'
+import Image from 'next/image'
 
 export default function HomeCourseCard2() {
   return (
     <>
       <div className={style['product-card']}>
         <div className={style['product-image-container']}>
-          <img
+          <Image
             className={style['product-image']}
             src="/product/course/course/gutier2.jpg"
             alt="Guitar"
+            width={300}
+            height={300}
           />
         </div>
         <div className={style['product-details']}>

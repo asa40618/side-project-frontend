@@ -10,6 +10,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+
 /* 图片容器 */
 .product-image-container {
   flex-grow: 1;
@@ -39,7 +40,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  white-space: nowrap;
+  // white-space: nowrap;
   text-overflow: ellipsis;
   margin-left: 20px; /* 添加右移的间距 */
 }
@@ -50,6 +51,7 @@
   font-weight: bold;
   margin-top: 0px;
   color: white;
+  word-break: break-all
 }
 
 /* 商品描述 */
@@ -77,8 +79,8 @@
 }
 
 /* RWD for max-width 390px */
-@media (max-width: 390px) {
+@media (max-width: 430px) {
   .product-card {
-    width: 370px;
+    width: 90vw;
   }
 }

@@ -11,7 +11,6 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <>
-      <Head></Head>
       <main style={{ backgroundColor: '#22333B' }}>
         <Section1 />
         <Section2 />

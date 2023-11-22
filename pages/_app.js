@@ -23,7 +23,6 @@ export default function MyApp({ Component, pageProps }) {
 
   return (
     <AuthProviderJWT>
-      
       <CartTicketProvider>
       <CartCourseProvider>
       <CartProvider>

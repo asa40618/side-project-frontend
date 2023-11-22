@@ -32,7 +32,6 @@ export default function Header() {
   }
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside)
-
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
@@ -41,6 +40,8 @@ export default function Header() {
   //登入相關 取得全站authJWT資料
   const { authJWT, setAuthJWT } = useAuthJWT()
   const userData = authJWT.userData
+  // sidebar登入登出用
+  const isAuth = authJWT.isAuth
   // 登出
   async function logoutbtn() {
     const res = await axios.post(
@@ -103,18 +104,6 @@ export default function Header() {
       path: '/figure/teacher',
     },
   ]
-
-  // const menu1 = (
-  //   <Menu>
-  //     {dropdown1Items.map((item) => (
-  //       <Menu.Item key={item.key}>
-  //         <Link href={item.path} className={`${style.dropdownDesign} `}>
-  //           {item.label}
-  //         </Link>
-  //       </Menu.Item>
-  //     ))}
-  //   </Menu>
-  // )
 
   const menu2 = (
     <Menu>
@@ -363,20 +352,23 @@ export default function Header() {
               <span className="text-info h3">課程</span>
             </Link>
           </li>
-          <li>
+          {isAuth ? <><li>
             <Link href="/member" className="text-info h4">
               會員中心
             </Link>
           </li>
-          <li>
-            <Link
-              href="/member/logout"
-              className="text-info h4"
-              onClick={logoutbtn}
-            >
-              會員登出
-            </Link>
-          </li>
+            <li>
+              <Link
+                href="/member/logout"
+                className="text-info h4"
+                onClick={logoutbtn}
+              >
+                會員登出
+              </Link>
+            </li></> : <li>
+            <Link href="/member/login"
+              className="text-info h4">會員登入</Link>
+          </li>}
         </div>
       </ul>
     </>

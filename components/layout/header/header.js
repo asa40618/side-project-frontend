@@ -43,7 +43,7 @@ export default function Header() {
   // sidebar登入登出用
   const isAuth = authJWT.isAuth
   // 登出
-  async function logoutbtn() {
+  async function logoutCleanCookies() {
     const res = await axios.post(
       'https://nodal-buckeye-404908.de.r.appspot.com/api/member/logout',
       { accessToken: Cookies.get('accessToken') },
@@ -125,7 +125,7 @@ export default function Header() {
       <Link
         href="/member/logout"
         className={`${style.memberDropdown} `}
-        onClick={logoutbtn}
+        onClick={logoutCleanCookies}
       >
         會員登出
       </Link>
@@ -333,42 +333,46 @@ export default function Header() {
         </div>
         <div>
           <li>
-            <Link href="/product/album">
+            <Link href="/product/album " onClick={toggleMenu}>
               <span className="text-info h3">專輯</span>
             </Link>
           </li>
           <li>
-            <Link href="/ranking" className="text-info h3">
+            <Link href="/ranking" className="text-info h3" onClick={toggleMenu}>
               排行榜
             </Link>
           </li>
           <li>
-            <Link href="/product/event-management" className="text-info h3">
+            <Link href="/product/event-management" className="text-info h3" onClick={toggleMenu}>
               音樂祭購票
             </Link>
           </li>
           <li>
-            <Link href="/product/course">
+            <Link href="/product/course" onClick={toggleMenu}>
               <span className="text-info h3">課程</span>
             </Link>
           </li>
-          {isAuth ? <><li>
-            <Link href="/member" className="text-info h4">
-              會員中心
-            </Link>
-          </li>
+          {isAuth ?
+            <>
+              <li>
+                <Link href="/member" className="text-info h3" onClick={toggleMenu}>
+                  會員中心
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/member/logout"
+                  className="text-info h3"
+                  onClick={() => { toggleMenu; logoutCleanCookies }}
+                >
+                  會員登出
+                </Link>
+              </li>
+            </> :
             <li>
-              <Link
-                href="/member/logout"
-                className="text-info h4"
-                onClick={logoutbtn}
-              >
-                會員登出
-              </Link>
-            </li></> : <li>
-            <Link href="/member/login"
-              className="text-info h4">會員登入</Link>
-          </li>}
+              <Link href="/member/login"
+                className="text-info h4" onClick={toggleMenu}>會員登入</Link>
+            </li>}
         </div>
       </ul>
     </>

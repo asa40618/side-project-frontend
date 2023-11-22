@@ -300,7 +300,7 @@ export default function Header() {
               </div>
             )}
             {/* 購物車 */}
-            <Link href="/product/cart">
+            <Link href={`${isAuth ? "/product/cart" : "/member/login"}`}>
               <li>
                 <Badge count={totalproduct}>
                   <RiShoppingBasket2Fill className="text-info h1" />
@@ -371,7 +371,7 @@ export default function Header() {
             </> :
             <li>
               <Link href="/member/login"
-                className="text-info h4" onClick={toggleMenu}>會員登入</Link>
+                className="text-info h3" onClick={toggleMenu}>會員登入</Link>
             </li>}
         </div>
       </ul>

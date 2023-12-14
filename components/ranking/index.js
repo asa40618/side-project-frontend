@@ -100,14 +100,7 @@ export default function Ranking() {
           <div className="text-center my-4 py-3">
             <Statistic
               value={record.collectAccount}
-              prefix={
-                <HeartFilled
-                  className="px-2"
-                  style={{
-                    color: 'hotpink',
-                  }}
-                />
-              }
+              prefix={<HeartFilled className="px-2" />}
             />
           </div>
         </>
@@ -162,8 +155,8 @@ export default function Ranking() {
             navigation
             pagination={{ clickable: true }}
             scrollbar={{ draggable: true }}
-            // onSwiper={(swiper) => console.log(swiper)}
-            // onSlideChange={() => console.log('slide change')}
+          // onSwiper={(swiper) => console.log(swiper)}
+          // onSlideChange={() => console.log('slide change')}
           >
             <SwiperSlide
               className="btn btn-secondary text-info"

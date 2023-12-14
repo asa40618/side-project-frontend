@@ -78,20 +78,6 @@ export default function Header() {
     }
   }
 
-  // 下拉選單內容
-  // const dropdown1Items = [
-  //   {
-  //     key: '1',
-  //     label: '專輯 Album',
-  //     path: '/product/album',
-  //   },
-  //   {
-  //     key: '2',
-  //     label: '音樂人 Musician',
-  //     path: '/figure/singer',
-  //   },
-  // ]
-
   const dropdown2Items = [
     {
       key: '3',
@@ -140,9 +126,6 @@ export default function Header() {
   useEffect(() => { //當購物車內容有變動時，重新設定總數量狀態
     setTotalproduct(newTotal)
   }, [newTotal])
-  useEffect(() => {
-    console.log('totalproduct', totalproduct)
-  }, [totalproduct])
 
   return (
     <>
@@ -165,14 +148,6 @@ export default function Header() {
                 }}
               >
                 <li>
-                  {/* <Dropdown overlay={menu1} className="dropdownDesign">
-                    <Space>
-                      <span className={`h3 ${style.navBtn}`}>
-                        精選專輯 Album &nbsp;
-                        <DownOutlined />
-                      </span>
-                    </Space>
-                  </Dropdown> */}
                   <Link href="/product/album" className=" h3">
                     精選專輯 Album
                   </Link>
@@ -196,21 +171,12 @@ export default function Header() {
                 theme={{
                   token: {
                     motionDurationMid: '0.1s',
-                    // controlItemBgHover: '#181818',
                     colorBgElevated: '#181818',
                     colorText: '#fff',
                   },
                 }}
               >
                 <li>
-                  {/* <Dropdown overlay={menu2}>
-                    <Space>
-                      <span className={`h3 ${style.navBtn}`}>
-                        精選課程 Course &nbsp;
-                        <DownOutlined />
-                      </span>
-                    </Space>
-                  </Dropdown> */}
                   <Link href="/product/course" className=" h3">
                     精選課程 Course
                   </Link>

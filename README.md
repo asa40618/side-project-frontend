@@ -1,4 +1,4 @@
-**小組專題製作 - 律洲MelodyOasis**
+小組專題製作 - 律洲MelodyOasis
 2023/5~2023/10
 資展國際(原資策會)畢業專題 - 律洲MelodyOasis
 

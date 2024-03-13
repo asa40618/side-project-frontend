@@ -11,6 +11,7 @@
 3.Scss (CSS管理) <br/>
 4.Axios (API要求) <br/>
 5.Ant design (UI設計) <br/>
+6.useEffect(網頁互動)、useContext(儲存會員資料、儲存購物車資料)
 
 ### 後端
 1.Node.js (後端路由、從資料庫抽取資料) <br/>

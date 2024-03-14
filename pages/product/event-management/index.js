@@ -8,6 +8,7 @@ import axios from 'axios'
 
 export default function EventManagement() {
   const perPage = 4
+  // 預設票券活動資料
   const [allEvents, setAllEvents] = useState([
     {
       "id": 1,

@@ -40,40 +40,40 @@ export default function LoginForm() {
     setShowPassword(!showPassword)
   }
   // 表單送出
-  async function handleSubmit() {
-    // console.log(formData)
-    const res = await axios.post(
-      'https://nodal-buckeye-404908.de.r.appspot.com/api/member/login',
-      {
-        // account: 'emma_lee123',
-        // password: '12345',
-        ...formData,
-      },
-      {
-        withCredentials: true, // save cookie in browser
-      }
-    )
-    // 取得訊息、通行證
-    console.log(res.data)
-    // 解析通行證內容
-    // console.log(parseJwt(res.data.accessToken))
-    //判斷帳號密碼
-    console.log(typeof res.data.message)
-    if (res.data.message === '帳號密碼錯誤') {
-      setMsgErrorHtml(res.data.message)
-    } else {
-      setMsgErrorHtml('')
-    }
+  // async function handleSubmit() {
+  //   // console.log(formData)
+  //   const res = await axios.post(
+  //     'https://nodal-buckeye-404908.de.r.appspot.com/api/member/login',
+  //     {
+  //       // account: 'emma_lee123',
+  //       // password: '12345',
+  //       ...formData,
+  //     },
+  //     {
+  //       withCredentials: true, // save cookie in browser
+  //     }
+  //   )
+  //   // 取得訊息、通行證
+  //   console.log(res.data)
+  //   // 解析通行證內容
+  //   // console.log(parseJwt(res.data.accessToken))
+  //   //判斷帳號密碼
+  //   console.log(typeof res.data.message)
+  //   if (res.data.message === '帳號密碼錯誤') {
+  //     setMsgErrorHtml(res.data.message)
+  //   } else {
+  //     setMsgErrorHtml('')
+  //   }
 
-    // 設定cookie
-    Cookies.set('accessToken', res.data.accessToken, { expires: 1 })
-    if (res.data.message === 'success') {
-      setAuthJWT({
-        isAuth: true,
-        userData: parseJwt(res.data.accessToken),
-      })
-    }
-  }
+  //   // 設定cookie
+  //   Cookies.set('accessToken', res.data.accessToken, { expires: 1 })
+  //   if (res.data.message === 'success') {
+  //     setAuthJWT({
+  //       isAuth: true,
+  //       userData: parseJwt(res.data.accessToken),
+  //     })
+  //   }
+  // }
   // 改變input內容
   const handleInputChange = (event) => {
     const { name, value } = event.target
@@ -85,7 +85,7 @@ export default function LoginForm() {
   // 點擊送出
   const loginBtnClick = (e) => {
     e.preventDefault()
-    handleSubmit()
+    // handleSubmit()
   }
   if (authJWT.isAuth) {
     router.push('/')

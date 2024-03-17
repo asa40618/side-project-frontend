@@ -43,40 +43,40 @@ export default function Header() {
   // sidebar登入登出用
   const isAuth = authJWT.isAuth
   // 登出
-  async function logoutCleanCookies() {
-    const res = await axios.post(
-      'https://nodal-buckeye-404908.de.r.appspot.com/api/member/logout',
-      { accessToken: Cookies.get('accessToken') },
-      {
-        withCredentials: true, // save cookie in browser
-      }
-    )
+  // async function logoutCleanCookies() {
+  //   const res = await axios.post(
+  //     'https://nodal-buckeye-404908.de.r.appspot.com/api/member/logout',
+  //     { accessToken: Cookies.get('accessToken') },
+  //     {
+  //       withCredentials: true, // save cookie in browser
+  //     }
+  //   )
 
-    console.log(res.data)
+  //   console.log(res.data)
 
-    if (res.data.message === 'success') {
-      Cookies.set('user', res.data.user)
-      Cookies.remove('accessToken')
-      setAuthJWT({
-        isAuth: false,
-        userData: {
-          account: '',
-          address: '',
-          birthday: '',
-          created_at: '',
-          email: '',
-          gender: '',
-          id: 0,
-          name: '',
-          phone: '',
-          photo: '',
-          status: '',
-          iat: 0,
-          exp: 0,
-        },
-      })
-    }
-  }
+  //   if (res.data.message === 'success') {
+  //     Cookies.set('user', res.data.user)
+  //     Cookies.remove('accessToken')
+  //     setAuthJWT({
+  //       isAuth: false,
+  //       userData: {
+  //         account: '',
+  //         address: '',
+  //         birthday: '',
+  //         created_at: '',
+  //         email: '',
+  //         gender: '',
+  //         id: 0,
+  //         name: '',
+  //         phone: '',
+  //         photo: '',
+  //         status: '',
+  //         iat: 0,
+  //         exp: 0,
+  //       },
+  //     })
+  //   }
+  // }
 
   const dropdown2Items = [
     {
@@ -111,7 +111,7 @@ export default function Header() {
       <Link
         href="/member/logout"
         className={`${style.memberDropdown} `}
-        onClick={logoutCleanCookies}
+        // onClick={logoutCleanCookies}
       >
         會員登出
       </Link>
@@ -329,7 +329,7 @@ export default function Header() {
                 <Link
                   href="/member/logout"
                   className="text-info h3"
-                  onClick={() => { toggleMenu; logoutCleanCookies }}
+                  // onClick={() => { toggleMenu; logoutCleanCookies }}
                 >
                   會員登出
                 </Link>

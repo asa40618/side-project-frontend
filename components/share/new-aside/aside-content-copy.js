@@ -22,28 +22,28 @@ export default function AsideContent({
   const [max, setMax] = useState('')
   const [start, setStart] = useState('')
   const [end, setEnd] = useState('')
-  const handleSubmit = async (e) => {
-    e.preventDefault() // 防止表单默认提交行为
-    try {
-      // 创建一个包含表单数据的对象
-      const formData = {
-        min: min,
-        max: max,
-        start: start,
-        end: end,
-      }
-      // 發送 POST 請求到後端
-      const response = await axios.post(
-        'https://nodal-buckeye-404908.de.r.appspot.com/api/album/search',
-        formData
-      )
-      setAlbumData(response.data)
-      console.log('后端响应：', response.data)
-    } catch (error) {
-      // 处理错误
-      console.error('发送请求时出错：', error)
-    }
-  }
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault() // 防止表单默认提交行为
+  //   try {
+  //     // 创建一个包含表单数据的对象
+  //     const formData = {
+  //       min: min,
+  //       max: max,
+  //       start: start,
+  //       end: end,
+  //     }
+  //     // 發送 POST 請求到後端
+  //     const response = await axios.post(
+  //       'https://nodal-buckeye-404908.de.r.appspot.com/api/album/search',
+  //       formData
+  //     )
+  //     setAlbumData(response.data)
+  //     console.log('后端响应：', response.data)
+  //   } catch (error) {
+  //     // 处理错误
+  //     console.error('发送请求时出错：', error)
+  //   }
+  // }
   return (
     <>
       <div className="text-white bg-secondary p-2 text-center">
@@ -62,7 +62,9 @@ export default function AsideContent({
         <div>
           <h1 className="mt-4">{type}篩選</h1>
           <hr />
-          <form action="" method="post" onSubmit={handleSubmit}>
+          <form action="" method="post"
+          // onSubmit={handleSubmit}
+          >
             <h2>日期</h2>
             <div class="input-group input-group-sm d-flex justify-content-center">
               <input
@@ -128,7 +130,7 @@ export default function AsideContent({
                 marginLeft: 'auto',
                 marginRight: 'auto',
               }}
-              onClick={() => {}}
+              onClick={() => { }}
             >
               提交
             </button>

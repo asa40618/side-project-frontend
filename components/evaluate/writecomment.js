@@ -26,45 +26,45 @@ export default function Writecomment({
   const handleSetStars = (rateScore) => {
     setUserStars(rateScore)
   }
-  const handleFormSubmit = async () => {
-    setShouldReload(true)
-    setBtnDisable(true)
-    // 處理送出評論
-    try {
-      const response = await axios.post(
-        `https://nodal-buckeye-404908.de.r.appspot.com/api/evaluate/${targetTableCondition}/${pid}`,
-        {
-          member_id: userData.id,
-          stars: userStars,
-          comment: value,
-        }
-      )
-      if (response.status === 200) {
-        openNotification(
-          '留言成功',
-          '您的商品評價已成功送出',
-          'topRight',
-          <CheckCircleOutlined
-            style={{
-              color: '#009933',
-            }}
-          />
-        )
-      }
-    } catch (error) {
-      console.error('Error:新增評價失敗')
-      openNotification(
-        '留言失敗',
-        '您的商品評價送出失敗，請聯絡客服中心',
-        'topRight',
-        <CloseCircleOutlined
-          style={{
-            color: '#cc0000',
-          }}
-        />
-      )
-    }
-  }
+  // const handleFormSubmit = async () => {
+  //   setShouldReload(true)
+  //   setBtnDisable(true)
+  //   // 處理送出評論
+  //   try {
+  //     const response = await axios.post(
+  //       `https://nodal-buckeye-404908.de.r.appspot.com/api/evaluate/${targetTableCondition}/${pid}`,
+  //       {
+  //         member_id: userData.id,
+  //         stars: userStars,
+  //         comment: value,
+  //       }
+  //     )
+  //     if (response.status === 200) {
+  //       openNotification(
+  //         '留言成功',
+  //         '您的商品評價已成功送出',
+  //         'topRight',
+  //         <CheckCircleOutlined
+  //           style={{
+  //             color: '#009933',
+  //           }}
+  //         />
+  //       )
+  //     }
+  //   } catch (error) {
+  //     console.error('Error:新增評價失敗')
+  //     openNotification(
+  //       '留言失敗',
+  //       '您的商品評價送出失敗，請聯絡客服中心',
+  //       'topRight',
+  //       <CloseCircleOutlined
+  //         style={{
+  //           color: '#cc0000',
+  //         }}
+  //       />
+  //     )
+  //   }
+  // }
 
   // 成功評論通知
   const [api, contextHolder] = notification.useNotification()
@@ -117,7 +117,9 @@ export default function Writecomment({
           onChange={handleTextAreaChange}
         />
         <div className="text-end">
-          <Popconfirm title={`確認送出留言?`} onConfirm={handleFormSubmit}>
+          <Popconfirm title={`確認送出留言?`}
+          // onConfirm={handleFormSubmit}
+          >
             <Button
               type="submit"
               className={`h4 ${evaluateStyle.button}`}

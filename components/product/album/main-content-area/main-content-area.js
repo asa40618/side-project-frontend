@@ -37,66 +37,66 @@ export default function MainContentArea({
   const [like, setLike] = useState(false)
   // const [userLike, setUserLike] = useState([])
   const [pData, setPData] = useState({})
-  const likeClick = () => {
-    if (!authJWT.isAuth) {
-      router.push('/member/login')
-      return false
-    }
-    if (like == true) {
-      removeLike()
-    } else {
-      addLike()
-    }
-    setLike(!like)
-  }
+  // const likeClick = () => {
+  //   if (!authJWT.isAuth) {
+  //     router.push('/member/login')
+  //     return false
+  //   }
+  //   if (like == true) {
+  //     removeLike()
+  //   } else {
+  //     addLike()
+  //   }
+  //   setLike(!like)
+  // }
 
-  async function fetchData(id) {
-    try {
-      // 抓取此登入使用者的id
-      const response = await axios.post(
-        'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/my-favorite/album',
-        {
-          accessToken: Cookies.get('accessToken'),
-        }
-      )
+  // async function fetchData(id) {
+  //   try {
+  //     // 抓取此登入使用者的id
+  //     const response = await axios.post(
+  //       'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/my-favorite/album',
+  //       {
+  //         accessToken: Cookies.get('accessToken'),
+  //       }
+  //     )
 
-      const result = response.data
-      const userLike = result.favorites
+  //     const result = response.data
+  //     const userLike = result.favorites
 
-      console.log(userLike)
-      console.log(result)
+  //     console.log(userLike)
+  //     console.log(result)
 
-      const includesValue = userLike.includes(id)
-      console.log(includesValue)
+  //     const includesValue = userLike.includes(id)
+  //     console.log(includesValue)
 
-      if (includesValue) {
-        setLike(true)
-      } else {
-        setLike(false)
-      }
-    } catch (error) {
-      console.log('error:' + error)
-    }
-  }
-  useEffect(() => {
-    if (id != undefined) {
-      fetchData(parseInt(id))
-    }
-  }, [id])
-  const addLike = async () => {
-    const res = await axios.put(
-      'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/' + `album/${id}`,
-      { accessToken: Cookies.get('accessToken') }
-    )
-    // console.log(res)
-  }
-  const removeLike = async () => {
-    const res = await axios.put(
-      'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/delete/' + `album/${id}`,
-      { accessToken: Cookies.get('accessToken') }
-    )
-    // console.log(res)
-  }
+  //     if (includesValue) {
+  //       setLike(true)
+  //     } else {
+  //       setLike(false)
+  //     }
+  //   } catch (error) {
+  //     console.log('error:' + error)
+  //   }
+  // }
+  // useEffect(() => {
+  //   if (id != undefined) {
+  //     fetchData(parseInt(id))
+  //   }
+  // }, [id])
+  // const addLike = async () => {
+  //   const res = await axios.put(
+  //     'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/' + `album/${id}`,
+  //     { accessToken: Cookies.get('accessToken') }
+  //   )
+  //   // console.log(res)
+  // }
+  // const removeLike = async () => {
+  //   const res = await axios.put(
+  //     'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/delete/' + `album/${id}`,
+  //     { accessToken: Cookies.get('accessToken') }
+  //   )
+  //   // console.log(res)
+  // }
 
   return (
     <>
@@ -153,7 +153,7 @@ export default function MainContentArea({
             </button>
             <buttom
               className="btn btn-primary flex-fill  btn-lg "
-              onClick={likeClick}
+              // onClick={likeClick}
             >
               加入我的最愛&nbsp;
               {/* <Image
@@ -178,7 +178,7 @@ export default function MainContentArea({
             </button>
             <buttom
               className="btn btn-primary flex-fill  btn-lg col-12 mt-2 "
-              onClick={likeClick}
+              // onClick={likeClick}
             >
               加入我的最愛&nbsp;
               {/* <Image

@@ -251,20 +251,19 @@ function PageEvent() {
   // 最愛按鈕
   const { authJWT } = useAuthJWT()
   const [like, setLike] = useState(false)
-  // const [userLike, setUserLike] = useState([])
-  const [pData, setPData] = useState({})
-  const likeClick = () => {
-    if (!authJWT.isAuth) {
-      router.push('/member/login')
-      return false
-    }
-    if (like == true) {
-      removeLike()
-    } else {
-      addLike()
-    }
-    setLike(!like)
-  }
+
+  // const likeClick = () => {
+  //   if (!authJWT.isAuth) {
+  //     router.push('/member/login')
+  //     return false
+  //   }
+  //   if (like == true) {
+  //     removeLike()
+  //   } else {
+  //     addLike()
+  //   }
+  //   setLike(!like)
+  // }
 
   async function fetchData(id) {
     try {
@@ -294,25 +293,25 @@ function PageEvent() {
       console.log('error:' + error)
     }
   }
+
   useEffect(() => {
     if (id != undefined) {
       fetchData(parseInt(id))
     }
   }, [id])
-  const addLike = async () => {
-    const res = await axios.put(
-      'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/' + `event/${id}`,
-      { accessToken: Cookies.get('accessToken') }
-    )
-    // console.log(res)
-  }
-  const removeLike = async () => {
-    const res = await axios.put(
-      'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/delete/' + `event/${id}`,
-      { accessToken: Cookies.get('accessToken') }
-    )
-    // console.log(res)
-  }
+
+  // const addLike = async () => {
+  //   const res = await axios.put(
+  //     'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/' + `event/${id}`,
+  //     { accessToken: Cookies.get('accessToken') }
+  //   )
+  // }
+  // const removeLike = async () => {
+  //   const res = await axios.put(
+  //     'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/delete/' + `event/${id}`,
+  //     { accessToken: Cookies.get('accessToken') }
+  //   )
+  // }
 
   const {
     images,
@@ -370,7 +369,7 @@ function PageEvent() {
               </button>
               <buttom
                 className="btn btn-primary flex-fill  btn-lg "
-                onClick={likeClick}
+                // onClick={likeClick}
               >
                 加入我的最愛&nbsp;
                 {/* <Image src={HeartDefaultIcon} alt="heart-default-icon-dark" /> */}
@@ -387,7 +386,7 @@ function PageEvent() {
               </button>
               <buttom
                 className="btn btn-primary flex-fill  btn-lg col-12 mt-2 "
-                onClick={likeClick}
+                // onClick={likeClick}
               >
                 加入我的最愛&nbsp;
                 {/* <Image src={HeartDefaultIcon} alt="heart-default-icon-dark" />

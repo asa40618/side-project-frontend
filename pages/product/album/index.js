@@ -186,56 +186,56 @@ export default function Category() {
   // ttt hhh ppp rrr
   const [albumData, setAlbumData] = useState([])
   // // ttt
-  useEffect(() => {
-    // 使用 Fetch API 從 API 中獲取 JSON 資料
-    fetch('https://nodal-buckeye-404908.de.r.appspot.com/api/album/')
-      .then((response) => response.json())
-      .then((data) => {
-        // data 是包含多個 album 資訊的陣列
-        setAlbumData(data)
+  // useEffect(() => {
+  //   // 使用 Fetch API 從 API 中獲取 JSON 資料
+  //   fetch('https://nodal-buckeye-404908.de.r.appspot.com/api/album/')
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       // data 是包含多個 album 資訊的陣列
+  //       setAlbumData(data)
 
-        //z1
-        // const filteredAlbums = data.filter((item) => item.language_id === 1)
-        // const filteredAlbums = data.filter((item) => item.language_id === 2)
-        // const filteredAlbums = data.filter((item) => item.language_id === 3)
-        // z3
-        // setFilteredData(filteredAlbums)
-        //Z8
-        // if (selectedValues.length === 0) {
-        //   setFilteredData(data)
-        // } else {
-        //   // 否则，根据选中的值筛选数据
-        //   const filteredAlbums = data.filter((item) =>
-        //     selectedValues.includes(item.language_id.toString())
-        //   )
-        //   setFilteredData(filteredAlbums)
-        // }
+  //       //z1
+  //       // const filteredAlbums = data.filter((item) => item.language_id === 1)
+  //       // const filteredAlbums = data.filter((item) => item.language_id === 2)
+  //       // const filteredAlbums = data.filter((item) => item.language_id === 3)
+  //       // z3
+  //       // setFilteredData(filteredAlbums)
+  //       //Z8
+  //       // if (selectedValues.length === 0) {
+  //       //   setFilteredData(data)
+  //       // } else {
+  //       //   // 否则，根据选中的值筛选数据
+  //       //   const filteredAlbums = data.filter((item) =>
+  //       //     selectedValues.includes(item.language_id.toString())
+  //       //   )
+  //       //   setFilteredData(filteredAlbums)
+  //       // }
 
-        // setFilteredData(filteredAlbums)
+  //       // setFilteredData(filteredAlbums)
 
-        //z5
-        // const firstSortedData = [...data].sort((a, b) => {
-        //Z8 filteredData filteredAlbums
+  //       //z5
+  //       // const firstSortedData = [...data].sort((a, b) => {
+  //       //Z8 filteredData filteredAlbums
 
-        // 第一次資料顯示
-        const firstSortedData = [...data].sort((a, b) => {
-          if (a[sortConfig.key] < b[sortConfig.key]) {
-            return sortConfig.direction === 'ascending' ? -1 : 1
-          }
-          if (a[sortConfig.key] > b[sortConfig.key]) {
-            return sortConfig.direction === 'ascending' ? 1 : -1
-          }
-          return 0
-        })
+  //       // 第一次資料顯示
+  //       const firstSortedData = [...data].sort((a, b) => {
+  //         if (a[sortConfig.key] < b[sortConfig.key]) {
+  //           return sortConfig.direction === 'ascending' ? -1 : 1
+  //         }
+  //         if (a[sortConfig.key] > b[sortConfig.key]) {
+  //           return sortConfig.direction === 'ascending' ? 1 : -1
+  //         }
+  //         return 0
+  //       })
 
-        const firstNewArray = firstSortedData.slice((1 - 1) * 12, 1 * 12)
+  //       const firstNewArray = firstSortedData.slice((1 - 1) * 12, 1 * 12)
 
-        setNewProducts(firstNewArray)
-      })
-      .catch((error) => {
-        console.error('發生錯誤：', error)
-      })
-  }, [])
+  //       setNewProducts(firstNewArray)
+  //     })
+  //     .catch((error) => {
+  //       console.error('發生錯誤：', error)
+  //     })
+  // }, [])
   // 語系篩選
   const handleTags = (products, tags) => {
     let newProducts = [...products]

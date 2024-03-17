@@ -13,71 +13,72 @@ export default function Like() {
   const [like, setLike] = useState(false)
   // const [userLike, setUserLike] = useState([])
   const [pData, setPData] = useState({ id: 1 })
-  const likeClick = () => {
-    if (!authJWT.isAuth) {
-      router.push('/member/login')
-      return false
-    }
-    if (like == true) {
-      removeLike()
-    } else {
-      addLike()
-    }
-    setLike(!like)
-  }
-  const addLike = async () => {
-    const res = await axios.put(
-      'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/' +
-        `album/${pData.id}`,
-      { accessToken: Cookies.get('accessToken') }
-    )
-    // console.log(res)
-  }
-  const removeLike = async () => {
-    const res = await axios.put(
-      'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/delete/' +
-        `album/${pData.id}`,
-      { accessToken: Cookies.get('accessToken') }
-    )
-    // console.log(res)
-  }
+  // const likeClick = () => {
+  //   if (!authJWT.isAuth) {
+  //     router.push('/member/login')
+  //     return false
+  //   }
+  //   if (like == true) {
+  //     removeLike()
+  //   } else {
+  //     addLike()
+  //   }
+  //   setLike(!like)
+  // }
+  // const addLike = async () => {
+  //   const res = await axios.put(
+  //     'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/' +
+  //       `album/${pData.id}`,
+  //     { accessToken: Cookies.get('accessToken') }
+  //   )
+  // }
+  // const removeLike = async () => {
+  //   const res = await axios.put(
+  //     'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/delete/' +
+  //       `album/${pData.id}`,
+  //     { accessToken: Cookies.get('accessToken') }
+  //   )
+  //   // console.log(res)
+  // }
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        // 抓取此登入使用者的id
-        const response = await axios.post(
-          'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/my-favorite/album',
-          {
-            accessToken: Cookies.get('accessToken'),
-          }
-        )
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     try {
+  //       // 抓取此登入使用者的id
+  //       const response = await axios.post(
+  //         'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/my-favorite/album',
+  //         {
+  //           accessToken: Cookies.get('accessToken'),
+  //         }
+  //       )
 
-        const result = response.data
-        const userLike = result.favorites
+  //       const result = response.data
+  //       const userLike = result.favorites
 
-        console.log(userLike)
-        console.log(pData.id)
+  //       console.log(userLike)
+  //       console.log(pData.id)
 
-        const includesValue = userLike.includes(pData.id)
-        console.log(includesValue)
+  //       const includesValue = userLike.includes(pData.id)
+  //       console.log(includesValue)
 
-        if (includesValue) {
-          setLike(true)
-        } else {
-          setLike(false)
-        }
-      } catch (error) {
-        console.log('error:' + error)
-      }
-    }
+  //       if (includesValue) {
+  //         setLike(true)
+  //       } else {
+  //         setLike(false)
+  //       }
+  //     } catch (error) {
+  //       console.log('error:' + error)
+  //     }
+  //   }
 
-    fetchData()
-  }, [])
+  //   fetchData()
+  // }, [])
 
   return (
     <>
-      <button type="button" onClick={likeClick}>
+      <button type="button"
+      // onClick={likeClick}
+      >
         like
         {like ? <AiFillHeart /> : <AiOutlineHeart />}
       </button>

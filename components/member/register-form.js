@@ -43,30 +43,30 @@ export default function RegisterForm() {
   }
   const registerBtnClick = (e) => {
     e.preventDefault()
-    handleSubmit()
+    // handleSubmit()
   }
   // 表單送出
-  async function handleSubmit() {
-    // console.log(formData)
-    const res = await axios.post(
-      'https://nodal-buckeye-404908.de.r.appspot.com/api/users',
+  // async function handleSubmit() {
+  //   // console.log(formData)
+  //   const res = await axios.post(
+  //     'https://nodal-buckeye-404908.de.r.appspot.com/api/users',
 
-      {
-        ...formData,
-      },
-      {
-        withCredentials: true, // save cookie in browser
-      }
-    )
-    // API回傳訊息
-    console.log(res.data)
-    if (res.data.message == 'success') {
-      router.push('/member/login')
-    }
-    if (res.data.message == 'fail' && res.data.errors != {}) {
-      setErrors(res.data.errors)
-    }
-  }
+  //     {
+  //       ...formData,
+  //     },
+  //     {
+  //       withCredentials: true, // save cookie in browser
+  //     }
+  //   )
+  //   // API回傳訊息
+  //   console.log(res.data)
+  //   if (res.data.message == 'success') {
+  //     router.push('/member/login')
+  //   }
+  //   if (res.data.message == 'fail' && res.data.errors != {}) {
+  //     setErrors(res.data.errors)
+  //   }
+  // }
   return (
     <>
       <div className="bg-success p-5">

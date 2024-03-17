@@ -45,62 +45,62 @@ export default function ForgetPasswordForm() {
     }
   }, [count])
 
-  const getOtp = async () => {
-    if (delay !== null) {
-      setVerifyMessage('60s內無法重新獲得驗証碼')
-      return
-    }
-    const res = await axios.post(
-      'https://nodal-buckeye-404908.de.r.appspot.com/api/reset-password/otp',
-      {
-        email,
-      }
-    )
+  // const getOtp = async () => {
+  //   if (delay !== null) {
+  //     setVerifyMessage('60s內無法重新獲得驗証碼')
+  //     return
+  //   }
+  //   const res = await axios.post(
+  //     'https://nodal-buckeye-404908.de.r.appspot.com/api/reset-password/otp',
+  //     {
+  //       email,
+  //     }
+  //   )
 
-    console.log(res.data)
-    if (res.data.message === 'fail') {
-      setVerifyMessage('驗証碼取得失敗，請確認Email是否已經註冊')
-    }
+  //   console.log(res.data)
+  //   if (res.data.message === 'fail') {
+  //     setVerifyMessage('驗証碼取得失敗，請確認Email是否已經註冊')
+  //   }
 
-    if (res.data.message === 'email sent') {
-      setVerifyMessage('驗証碼已寄送到你填寫的Email信箱中')
-      setCount(60) // reset countdown
-      setDelay(1000) // 1000ms = 1s
-    }
-  }
+  //   if (res.data.message === 'email sent') {
+  //     setVerifyMessage('驗証碼已寄送到你填寫的Email信箱中')
+  //     setCount(60) // reset countdown
+  //     setDelay(1000) // 1000ms = 1s
+  //   }
+  // }
 
-  const resetPassword = async (e) => {
-    e.preventDefault()
+  // const resetPassword = async (e) => {
+  //   e.preventDefault()
 
-    const res = await axios.post(
-      'https://nodal-buckeye-404908.de.r.appspot.com/api/reset-password/reset',
-      {
-        email,
-        token,
-        password,
-        rePassword,
-      }
-    )
-    if (res.data.message === 'fail' && res.data.error == '認證碼不正確') {
-      setVerifyMessage('驗証碼取得失敗，請確認Email是否已經註冊')
-    }
+  //   const res = await axios.post(
+  //     'https://nodal-buckeye-404908.de.r.appspot.com/api/reset-password/reset',
+  //     {
+  //       email,
+  //       token,
+  //       password,
+  //       rePassword,
+  //     }
+  //   )
+  //   if (res.data.message === 'fail' && res.data.error == '認證碼不正確') {
+  //     setVerifyMessage('驗証碼取得失敗，請確認Email是否已經註冊')
+  //   }
 
-    if (res.data.message === 'success') {
-      setSystem('密碼已成功修改!')
-      setPasswordMessage('')
-      setTimeout(() => {
-        router.push('/member/login')
-      }, 1000)
-    }
-    if (res.data.message === 'fail') {
-      setSystem('密碼修改失敗!')
-      if (res.data.error === '密碼與確認密碼不正確') {
-        setVerifyMessage('')
-        setPasswordMessage('密碼與確認密碼不正確')
-      }
-    }
-    console.log(res.data)
-  }
+  //   if (res.data.message === 'success') {
+  //     setSystem('密碼已成功修改!')
+  //     setPasswordMessage('')
+  //     setTimeout(() => {
+  //       router.push('/member/login')
+  //     }, 1000)
+  //   }
+  //   if (res.data.message === 'fail') {
+  //     setSystem('密碼修改失敗!')
+  //     if (res.data.error === '密碼與確認密碼不正確') {
+  //       setVerifyMessage('')
+  //       setPasswordMessage('密碼與確認密碼不正確')
+  //     }
+  //   }
+  //   console.log(res.data)
+  // }
   // 密碼顯示
   function showPasswordClick() {
     setShowPassword(!showPassword)
@@ -151,7 +151,7 @@ export default function ForgetPasswordForm() {
                 </div>
                 {/* 取得驗證碼 */}
                 <Button
-                  onClick={getOtp}
+                  // onClick={getOtp}
                   class="btn  btn-outline-info rounded-end"
                   style={{ width: '106px' }}
                   type="button"
@@ -210,7 +210,7 @@ export default function ForgetPasswordForm() {
             </div>
             <Button
               className="btn btn-primary px-4 mb-3"
-              onClick={resetPassword}
+              // onClick={resetPassword}
             >
               重設密碼
             </Button>

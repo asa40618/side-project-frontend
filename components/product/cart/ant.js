@@ -87,16 +87,16 @@ const MyStepsComponent = () => {
     console.log(allPeople);
     // console.log(handleAllPeopleReady);
     //傳送訂單到後端
-    function sendOrder(orderData) {
-        axios.post(`https://nodal-buckeye-404908.de.r.appspot.com/api/order`, orderData)
-            .then((response) => {
-                console.log(`送資料到後端`, response.data)
-                localStorage.clear();
-            })
-            .catch((error) => {
-                console.log(`error`);
-            })
-    }
+    // function sendOrder(orderData) {
+    //     axios.post(`https://nodal-buckeye-404908.de.r.appspot.com/api/order`, orderData)
+    //         .then((response) => {
+    //             console.log(`送資料到後端`, response.data)
+    //             localStorage.clear();
+    //         })
+    //         .catch((error) => {
+    //             console.log(`error`);
+    //         })
+    // }
 
     function handleSendOrder() {
         console.log(allPeople);
@@ -127,7 +127,7 @@ const MyStepsComponent = () => {
         //     },
 
         // ]
-        sendOrder(orderData)
+        // sendOrder(orderData)
     }
 
 

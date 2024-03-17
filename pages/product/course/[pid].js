@@ -103,67 +103,67 @@ function PageEvent() {
   const [like, setLike] = useState(false)
   // const [userLike, setUserLike] = useState([])
   const [pData, setPData] = useState({})
-  const likeClick = () => {
-    if (!authJWT.isAuth) {
-      router.push('/member/login')
-      return false
-    }
-    if (like == true) {
-      removeLike()
-    } else {
-      addLike()
-    }
-    setLike(!like)
-  }
+  // const likeClick = () => {
+  //   if (!authJWT.isAuth) {
+  //     router.push('/member/login')
+  //     return false
+  //   }
+  //   if (like == true) {
+  //     removeLike()
+  //   } else {
+  //     addLike()
+  //   }
+  //   setLike(!like)
+  // }
 
-  async function fetchData(id) {
-    try {
-      // 抓取此登入使用者的id
-      const response = await axios.post(
-        'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/my-favorite/course',
-        {
-          accessToken: Cookies.get('accessToken'),
-        }
-      )
+  // async function fetchData(id) {
+  //   try {
+  //     // 抓取此登入使用者的id
+  //     const response = await axios.post(
+  //       'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/my-favorite/course',
+  //       {
+  //         accessToken: Cookies.get('accessToken'),
+  //       }
+  //     )
 
-      const result = response.data
-      const userLike = result.favorites
+  //     const result = response.data
+  //     const userLike = result.favorites
 
-      console.log(userLike)
-      console.log(result)
+  //     console.log(userLike)
+  //     console.log(result)
 
-      const includesValue = userLike.includes(id)
-      console.log(includesValue)
+  //     const includesValue = userLike.includes(id)
+  //     console.log(includesValue)
 
-      if (includesValue) {
-        setLike(true)
-      } else {
-        setLike(false)
-      }
-    } catch (error) {
-      console.log('error:' + error)
-    }
-  }
-  useEffect(() => {
-    if (eventData.course_id != undefined) {
-      fetchData(parseInt(eventData.course_id))
-    }
-  }, [eventData.course_id])
-  const addLike = async () => {
-    const res = await axios.put(
-      'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/' + `course/${eventData.course_id}`,
-      { accessToken: Cookies.get('accessToken') }
-    )
-    // console.log(res)
-  }
-  const removeLike = async () => {
-    const res = await axios.put(
-      'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/delete/' +
-        `course/${eventData.course_id}`,
-      { accessToken: Cookies.get('accessToken') }
-    )
-    // console.log(res)
-  }
+  //     if (includesValue) {
+  //       setLike(true)
+  //     } else {
+  //       setLike(false)
+  //     }
+  //   } catch (error) {
+  //     console.log('error:' + error)
+  //   }
+  // }
+  // useEffect(() => {
+  //   if (eventData.course_id != undefined) {
+  //     fetchData(parseInt(eventData.course_id))
+  //   }
+  // }, [eventData.course_id])
+  // const addLike = async () => {
+  //   const res = await axios.put(
+  //     'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/' + `course/${eventData.course_id}`,
+  //     { accessToken: Cookies.get('accessToken') }
+  //   )
+  //   // console.log(res)
+  // }
+  // const removeLike = async () => {
+  //   const res = await axios.put(
+  //     'https://nodal-buckeye-404908.de.r.appspot.com/api/favorite/delete/' +
+  //       `course/${eventData.course_id}`,
+  //     { accessToken: Cookies.get('accessToken') }
+  //   )
+  //   // console.log(res)
+  // }
 
   const mainContent = (
     <>
@@ -208,7 +208,7 @@ function PageEvent() {
               </button>
               <buttom
                 className="btn btn-primary flex-fill  btn-lg "
-                onClick={likeClick}
+                // onClick={likeClick}
               >
                 加入我的最愛&nbsp;
                 {/* <Image src={HeartDefaultIcon} alt="heart-default-icon-dark" /> */}
@@ -225,7 +225,7 @@ function PageEvent() {
               </button>
               <buttom
                 className="btn btn-primary flex-fill  btn-lg col-12 mt-2 "
-                onClick={likeClick}
+                // onClick={likeClick}
               >
                 加入我的最愛&nbsp;
                 {/* <Image src={HeartDefaultIcon} alt="heart-default-icon-dark" /> */}

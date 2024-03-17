@@ -23,34 +23,36 @@ export default function Ordertest() {
   }
 
   // 處理表單提交
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    try {
-      const response = await axios.post(
-        'https://nodal-buckeye-404908.de.r.appspot.com/api/order/',
-        JSON.stringify([formData]),
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      )
-      console.log('Post response:', response)
-      if (response.status === 200) {
-        alert('訂單新增成功')
-      }
-      if (response.status === 500) {
-        alert('訂單新增失敗')
-      }
-      alert(response.body.message2)
-    } catch (error) {
-      console.error('Error posting data:', error)
-    }
-  }
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault()
+  //   try {
+  //     const response = await axios.post(
+  //       'https://nodal-buckeye-404908.de.r.appspot.com/api/order/',
+  //       JSON.stringify([formData]),
+  //       {
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //         },
+  //       }
+  //     )
+  //     console.log('Post response:', response)
+  //     if (response.status === 200) {
+  //       alert('訂單新增成功')
+  //     }
+  //     if (response.status === 500) {
+  //       alert('訂單新增失敗')
+  //     }
+  //     alert(response.body.message2)
+  //   } catch (error) {
+  //     console.error('Error posting data:', error)
+  //   }
+  // }
   return (
     <>
       {' '}
-      <form onSubmit={handleSubmit}>
+      <form
+      // onSubmit={handleSubmit}
+      >
         <input
           type="number"
           name="product_id"

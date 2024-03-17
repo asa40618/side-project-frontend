@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import SwiperCore, { EffectCoverflow, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import SwiperCore, { EffectCoverflow, Pagination, Navigation } from 'swiper'
+// import { SwiperSlide } from 'swiper/react'
 import 'swiper/swiper-bundle.css'
-import { Navigation } from 'swiper'
+// import {Navigation  } from 'swiper'
 
 SwiperCore.use([EffectCoverflow, Pagination, Navigation])
 
@@ -10,7 +11,7 @@ const CustomSwiper = ({
   cards = [],
   slidesPerViewDesktop = '2',
   spaceBetween = '30',
-  onCardClick = () => {}, // 新增這行
+  onCardClick = () => { }, // 新增這行
 }) => {
   const [shuffledCards, setShuffledCards] = useState(cards) // 初始化時只使用 cards
   const [slidesToShow, setSlidesToShow] = useState(slidesPerViewDesktop) // 對於 SSR 默認為 '2'

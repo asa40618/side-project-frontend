@@ -60,7 +60,121 @@ export default function Category() {
   // 分頁測試 part3
   const [product, setProduct] = useState([])
 
-  const [newProducts, setNewProducts] = useState([])
+  const [newProducts, setNewProducts] = useState([
+    {
+      "id": 1,
+      "title": "だからその手を離して",
+      "artist": "B'z",
+      "artist_id": 2,
+      "label": "Air Records",
+      "format": "Vinyl",
+      "country": "Japan",
+      "language_id": 3,
+      "released_date": "1988-09-21",
+      "year": 1988,
+      "cover_image": "R-18911899-1622164711-5894.jpg",
+      "discogs_id": 18911899,
+      "description": "だからその手を離して是日本音樂組合B'z的歌曲。於1988年9月21日作為出道單曲由BMG VICTOR發行。(Wiki)",
+      "price": 500,
+      "stock_num": 1,
+      "created_at": "2023-07-05 21:07:04",
+      "valid": 1
+    },
+    {
+      "id": 3,
+      "title": "You Give Love A Bad Name",
+      "artist": "Bon Jovi",
+      "artist_id": 4,
+      "label": "Mercury",
+      "format": "Vinyl",
+      "country": "Europe",
+      "language_id": 2,
+      "released_date": "1986-07-23",
+      "year": 1986,
+      "cover_image": "R-794249-1420917779-7024.jpg",
+      "discogs_id": 794249,
+      "description": "You Give Love a Bad Name，在1986年7月發行的單曲，這首單曲獲得美國告示牌1週冠軍，成為該團首支全美冠軍單曲。(wiki)",
+      "price": 501,
+      "stock_num": 1,
+      "created_at": "2023-07-05 21:34:10",
+      "valid": 1
+    },
+    {
+      "id": 6,
+      "title": "Digital Flower Best",
+      "artist": "花たん",
+      "artist_id": 6,
+      "label": "Digital Wing",
+      "format": "CD",
+      "country": "Japan",
+      "language_id": 3,
+      "released_date": "2017-05-17",
+      "year": 2017,
+      "cover_image": "R-10343464-1495937426-1860.jpg",
+      "discogs_id": 10343464,
+      "description": "花たん/YURiCa オンリーBEST決定盤！！「デジウィ」feat.「花たん」大人気楽曲を選りすぐりでここにお届け！新曲も注目♪DiGiTAL WiNG feat.花たん/YURiCa歴代の「DiGiTAL WiNG」アルバムの中から「花たん/YURiCa」歌唱で最も人気が高い曲を選りすぐりで収録です！ここにしか入っていない新曲も要チェック！(https://booth.pm/ja/items/2606406)Note:On the artwork, this compilation is credited to ",
+      "price": 503,
+      "stock_num": 3,
+      "created_at": "2023-07-05 21:58:24",
+      "valid": 1
+    },
+    {
+      "id": 7,
+      "title": "倔強",
+      "artist": "五月天",
+      "artist_id": 7,
+      "label": "Rock Records & Tapes",
+      "format": "CD",
+      "country": "Taiwan",
+      "language_id": 1,
+      "released_date": "2004-11-05",
+      "year": 2004,
+      "cover_image": "R-15738020-1596876170-3355.jpg",
+      "discogs_id": 15738020,
+      "description": "《倔強》是臺灣樂團五月天的歌曲，由阿信作詞、作曲。收錄於2004年的專輯《神的孩子都在跳舞》。(wiki)",
+      "price": 497,
+      "stock_num": 2,
+      "created_at": "2023-07-05 22:07:32",
+      "valid": 1
+    },
+    {
+      "id": 8,
+      "title": "十二樓的莫文蔚",
+      "artist": "莫文蔚",
+      "artist_id": 8,
+      "label": "Rock Records & Tapes",
+      "format": "Vinyl",
+      "country": "Taiwan",
+      "language_id": 1,
+      "released_date": "2021-05-28",
+      "year": 2021,
+      "cover_image": "R-18975259-1622572848-4127.jpg",
+      "discogs_id": 18975259,
+      "description": "《十二樓的莫文蔚》是香港歌手莫文蔚的第五張國語音樂專輯，於2000年10月26日發行。(wiki)黑膠版於2021年5月28日發行為什麼是十二樓的的莫文蔚? 而不是十一樓或十三樓的莫文蔚? 簡單說，是因為我們有一首歌叫《十二樓》。而這首歌正可以直接反映、呈現這一次跟過往完全不一樣的莫文蔚，無論視覺上和感覺上。寂寞，不一定是不開心。寂寞，不一定是一個人。寂寞，不一定要說我很寂寞才叫寂寞。寂寞，不一定是人才會寂寞，城市也可以很寂寞，國家也可以很寂寞。然而『十二樓』上，也不只有寂寞而已。要關在十二樓裡，要從十二樓更上一層樓，要從十二樓回到地面，可以自己決定，但是建議你開窗，你會聽見在城市裡的另一端，十二樓的莫文蔚正在開窗......",
+      "price": 1299,
+      "stock_num": 1,
+      "created_at": "2023-07-05 22:22:13",
+      "valid": 1
+    },
+    {
+      "id": 11,
+      "title": "Evermore",
+      "artist": "Taylor Swift",
+      "artist_id": 11,
+      "label": "Republic Records",
+      "format": "CD",
+      "country": "Europe",
+      "language_id": 2,
+      "released_date": "2020-12-18",
+      "year": 2020,
+      "cover_image": "R-16601034-1608804895-9382.jpg",
+      "discogs_id": 16601034,
+      "description": "《恆久傳說》（英語：Evermore，風格化為全小寫）是美國創作歌手泰勒絲的第九張錄音室專輯，由聯眾唱片於2020年12月11日發行，距離第八張錄音室專輯《美麗傳說》僅僅不到五個月而已。《恆久傳說》是上張專輯的姊妹專輯，都是在發行前幾個小時就在社交媒體上發布的驚喜專輯。這張專輯主要是獨立民謠、獨立搖滾和室內搖滾專輯，它以《美麗傳說》的獨立風格為基礎進行擴展，並圍繞其之前未曾談論過的一組新穎的敘事故事。\r\n\r\n《恆久傳說》專輯中客串了美國樂團海慕樂團、美好冬季樂團及The National。其主打單曲〈柳〉的發行日與該專輯的發行同一天，其音樂錄影帶為泰勒絲執導。《恆久傳說》受到音樂評論家的普遍讚譽，他們讚揚了其角色動態和實驗作品。",
+      "price": 459,
+      "stock_num": 2,
+      "created_at": "2023-07-09 21:25:54",
+      "valid": 1
+    }])
 
   const [initialLoad, setInitialLoad] = useState(true) // 新增状态
 
@@ -328,17 +442,17 @@ export default function Category() {
   //   }
   // }, [initialLoad, sortedData])
   const [processedData, setProcessedData] = useState([])
-  useEffect(() => {
-    let newData = []
-    newData = sortedData(albumData)
-    newData = handleTags(newData, tags)
-    // setFilter(handleTags(sortedData, tags))
-    setProcessedData(newData)
-    const newArray = newData.slice((page - 1) * perPage, page * perPage)
-    // sortedData = newData.slice((page - 1) * perPage, page * perPage)
+  // useEffect(() => {
+  //   let newData = []
+  //   newData = sortedData(albumData)
+  //   newData = handleTags(newData, tags)
+  //   // setFilter(handleTags(sortedData, tags))
+  //   setProcessedData(newData)
+  //   const newArray = newData.slice((page - 1) * perPage, page * perPage)
+  //   // sortedData = newData.slice((page - 1) * perPage, page * perPage)
 
-    setNewProducts(newArray)
-  }, [page, sortConfig, tags, albumData])
+  //   setNewProducts(newArray)
+  // }, [page, sortConfig, tags, albumData])
 
   // useEffect(() => {
   //   const newArray = sortedData.slice((page - 1) * perPage, page * perPage)
@@ -424,7 +538,7 @@ export default function Category() {
                           marginLeft: 'auto',
                           marginRight: 'auto',
                         }}
-                        onClick={() => {}}
+                        onClick={() => { }}
                       >
                         搖滾音樂
                       </button>
@@ -443,7 +557,7 @@ export default function Category() {
                           marginLeft: 'auto',
                           marginRight: 'auto',
                         }}
-                        onClick={() => {}}
+                        onClick={() => { }}
                       >
                         流行音樂
                       </button>
@@ -462,7 +576,7 @@ export default function Category() {
                           marginLeft: 'auto',
                           marginRight: 'auto',
                         }}
-                        onClick={() => {}}
+                        onClick={() => { }}
                       >
                         鄉村音樂
                       </button>
@@ -481,7 +595,7 @@ export default function Category() {
                           marginLeft: 'auto',
                           marginRight: 'auto',
                         }}
-                        onClick={() => {}}
+                        onClick={() => { }}
                       >
                         嘻哈音樂
                       </button>
@@ -581,7 +695,7 @@ export default function Category() {
                 <hr />
                 <form action="" method="post" onSubmit={handleSubmit}>
                   <h2>日期</h2>
-                  <div class="input-group input-group-sm d-flex justify-content-center">
+                  <div className="input-group input-group-sm d-flex justify-content-center">
                     <input
                       type="text"
                       className={`form-control-sm `}
@@ -607,7 +721,7 @@ export default function Category() {
                   <br />
                   <div>
                     <h2>價錢</h2>
-                    <div class="input-group input-group-sm  d-flex justify-content-center">
+                    <div className="input-group input-group-sm  d-flex justify-content-center">
                       <input
                         //   type="text"
                         className="form-control-sm"
@@ -646,7 +760,7 @@ export default function Category() {
                         marginLeft: 'auto',
                         marginRight: 'auto',
                       }}
-                      onClick={() => {}}
+                      onClick={() => { }}
                     >
                       提交
                     </button>
@@ -662,9 +776,9 @@ export default function Category() {
             <h1 className="text-center text-white">商品列表</h1>
           </div>
           <div className="d-flex justify-content-center mt-3 mb-5">
-            <div class="dropdown">
+            <div className="dropdown">
               <button
-                class="btn btn-secondary dropdown-toggle"
+                className="btn btn-secondary dropdown-toggle"
                 type="button"
                 id="dropdownMenuButton1"
                 data-bs-toggle="dropdown"
@@ -672,11 +786,11 @@ export default function Category() {
               >
                 排序
               </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 {/* sss part-3 start */}
                 <li>
                   <button
-                    class="dropdown-item"
+                    className="dropdown-item"
                     onClick={() => handleSortClick('id')}
                   >
                     {sortConfig.key === 'id'
@@ -688,7 +802,7 @@ export default function Category() {
                 </li>
                 <li>
                   <button
-                    class="dropdown-item"
+                    className="dropdown-item"
                     onClick={() => handleSortClick('year')}
                   >
                     {sortConfig.key === 'year'
@@ -700,7 +814,7 @@ export default function Category() {
                 </li>
                 <li>
                   <button
-                    class="dropdown-item"
+                    className="dropdown-item"
                     onClick={() => handleSortClick('price')}
                   >
                     {sortConfig.key === 'price'
@@ -712,7 +826,7 @@ export default function Category() {
                 </li>
                 <li>
                   <button
-                    class="dropdown-item"
+                    className="dropdown-item"
                     onClick={() => handleSortClick('released_date')}
                   >
                     {sortConfig.key === 'released_date'
@@ -773,7 +887,7 @@ export default function Category() {
                                 marginLeft: 'auto',
                                 marginRight: 'auto',
                               }}
-                              onClick={() => {}}
+                              onClick={() => { }}
                             >
                               搖滾音樂
                             </button>
@@ -792,7 +906,7 @@ export default function Category() {
                                 marginLeft: 'auto',
                                 marginRight: 'auto',
                               }}
-                              onClick={() => {}}
+                              onClick={() => { }}
                             >
                               流行音樂
                             </button>
@@ -811,7 +925,7 @@ export default function Category() {
                                 marginLeft: 'auto',
                                 marginRight: 'auto',
                               }}
-                              onClick={() => {}}
+                              onClick={() => { }}
                             >
                               鄉村音樂
                             </button>
@@ -830,7 +944,7 @@ export default function Category() {
                                 marginLeft: 'auto',
                                 marginRight: 'auto',
                               }}
-                              onClick={() => {}}
+                              onClick={() => { }}
                             >
                               嘻哈音樂
                             </button>
@@ -845,7 +959,7 @@ export default function Category() {
                       <hr />
                       <form action="" method="post" onSubmit={handleSubmit}>
                         <h2>日期</h2>
-                        <div class="input-group input-group-sm d-flex justify-content-center">
+                        <div className="input-group input-group-sm d-flex justify-content-center">
                           <input
                             type="text"
                             className={`form-control-sm `}
@@ -871,7 +985,7 @@ export default function Category() {
                         <br />
                         <div>
                           <h2>價錢</h2>
-                          <div class="input-group input-group-sm  d-flex justify-content-center">
+                          <div className="input-group input-group-sm  d-flex justify-content-center">
                             <input
                               //   type="text"
                               className="form-control-sm"
@@ -910,7 +1024,7 @@ export default function Category() {
                               marginLeft: 'auto',
                               marginRight: 'auto',
                             }}
-                            onClick={() => {}}
+                            onClick={() => { }}
                           >
                             提交
                           </button>

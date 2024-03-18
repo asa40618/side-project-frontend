@@ -64,25 +64,44 @@ export default function First() {
   //ccc
   const router = useRouter()
   const { pid } = router.query
-  const [albumData, setAlbumData] = useState({})
+  const [albumData, setAlbumData] = useState({
+
+    "id": 1,
+    "title": "だからその手を離して",
+    "artist": "B'z",
+    "artist_id": 2,
+    "label": "Air Records",
+    "format": "Vinyl",
+    "country": "Japan",
+    "language_id": 3,
+    "released_date": "1988-09-21",
+    "year": 1988,
+    "cover_image": "R-18911899-1622164711-5894.jpg",
+    "discogs_id": 18911899,
+    "description": "だからその手を離して是日本音樂組合B'z的歌曲。於1988年9月21日作為出道單曲由BMG VICTOR發行。(Wiki)",
+    "price": 500,
+    "stock_num": 1,
+    "created_at": "2023-07-05 21:07:04",
+    "valid": 1
+  })
   //ccc
-  useEffect(() => {
-    if (pid) {
-      axios
-        .get(`https://nodal-buckeye-404908.de.r.appspot.com/api/album/${pid}`)
-        .then((response) => {
-          //mmm part2-start
-          const mappedData = response.data[0]
-          mappedData.country = languageMapping[mappedData.country] || '未知語言'
-          mappedData.format = formatMapping[mappedData.format] || '未知格式'
-          //mmm part2-end
-          setAlbumData(response.data[0])
-        })
-        .catch((error) => {
-          console.error('Error:', error)
-        })
-    }
-  }, [pid])
+  // useEffect(() => {
+  //   if (pid) {
+  //     axios
+  //       .get(`https://nodal-buckeye-404908.de.r.appspot.com/api/album/${pid}`)
+  //       .then((response) => {
+  //         //mmm part2-start
+  //         const mappedData = response.data[0]
+  //         mappedData.country = languageMapping[mappedData.country] || '未知語言'
+  //         mappedData.format = formatMapping[mappedData.format] || '未知格式'
+  //         //mmm part2-end
+  //         setAlbumData(response.data[0])
+  //       })
+  //       .catch((error) => {
+  //         console.error('Error:', error)
+  //       })
+  //   }
+  // }, [pid])
   //ccc
   const imageSrc = `/product/album/${albumData.cover_image}`
 

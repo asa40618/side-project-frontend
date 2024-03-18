@@ -4,21 +4,30 @@ import React, { useEffect, useState } from 'react'
 //kkk props
 export default function Tracklist(props) {
   //aaa kkk
-  const [tracklist, setTracklist] = useState([]) // 初始化狀態為空數組
+  const [tracklist, setTracklist] = useState([{
+    "id": 1,
+    "discogs_id": 18911899,
+    "Track": "だからその手を離して"
+  },
+  {
+    "id": 2,
+    "discogs_id": 18911899,
+    "Track": "ハートも濡れるナンバー 〜Stay Tonight〜"
+  }]) // 初始化狀態為空數組
 
   // kkk
-  useEffect(() => {
-    if (props.id) {
-      fetch(`https://nodal-buckeye-404908.de.r.appspot.com/api/album/${props.id}/tracklist`)
-        .then((response) => response.json())
-        .then((data) => {
-          setTracklist(data)
-        })
-        .catch((error) => {
-          console.error('發生錯誤：', error)
-        })
-    }
-  }, [props.id])
+  // useEffect(() => {
+  //   if (props.id) {
+  //     fetch(`https://nodal-buckeye-404908.de.r.appspot.com/api/album/${props.id}/tracklist`)
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         setTracklist(data)
+  //       })
+  //       .catch((error) => {
+  //         console.error('發生錯誤：', error)
+  //       })
+  //   }
+  // }, [props.id])
 
   // 原本
   // useEffect(() => {

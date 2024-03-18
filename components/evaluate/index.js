@@ -2,7 +2,7 @@ import Star from './star'
 import evaluateStyle from './evaluate.module.scss'
 import ScoreAccount from './scoreAccount'
 import Comment from './comment'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, use } from 'react'
 import { useRouter } from 'next/router'
 import CustomPagination from './custompagination'
 import { useAuthJWT } from '../../hooks/use-auth-jwt'
@@ -18,36 +18,170 @@ export default function Evaluate() {
   const [page, setPage] = useState(1) //給分頁用的prop
   const { authJWT, setAuthJWT } = useAuthJWT()
   const userData = authJWT.userData
-  // console.log(userData)
   const [shouldReload, setShouldReload] = useState(false) //子組件writecomment要用的，在父組件設定狀態，子組件抓取狀態
   let pageVar = 4 // 每頁顯示幾筆資料
 
   const targetTableCondition = router.asPath.split('/')[2]
-  console.log("targetTableCondition", targetTableCondition)
-  // 抓取評價資料庫資料
-  const getProduct = async (pid) => {
-    try {
-      const res = await fetch(
-        `https://nodal-buckeye-404908.de.r.appspot.com/api/evaluate/${targetTableCondition}/${pid}`
-      )
-      const data = await res.json()
-      // 設定到狀態中 -> 會觸發重新渲染(re-render)
-      setProduct(data)
-    } catch (e) {
-      // 這裡可以作錯誤處理
-
-      // setTimeout(() => {
-      //   setIsLoading(false)
-      // }, 2000)
-      alert('伺服器連線失敗')
-      console.error(e)
-    }
-  }
-  // 以pid為參數，抓取評價資料庫資料，當pid改變時，重新抓取資料
+  console.log(targetTableCondition)
   useEffect(() => {
-    const { pid } = router.query
-    getProduct(pid && Object.keys(pid).length > 0 ? pid : 1)
-  }, [pid, shouldReload])
+    switch (targetTableCondition) {
+      case 'album':
+        setProduct([
+          {
+            "id": 3,
+            "album_id": 1,
+            "stars": 3,
+            "comment": "專輯內容還不錯。",
+            "comment_time": "2023-12-31 00:41:32",
+            "name": "Sophia",
+            "photo": ""
+          },
+          {
+            "id": 9,
+            "album_id": 1,
+            "stars": 1,
+            "comment": "專輯不太合我口味。",
+            "comment_time": "2023-09-03 18:35:42",
+            "name": "Joe",
+            "photo": ""
+          },
+          {
+            "id": 8,
+            "album_id": 1,
+            "stars": 4,
+            "comment": "音樂風格我很喜歡。",
+            "comment_time": "2023-07-24 01:01:03",
+            "name": "Tom",
+            "photo": ""
+          },
+          {
+            "id": 4,
+            "album_id": 1,
+            "stars": 2,
+            "comment": "專輯一般，期待下一張。",
+            "comment_time": "2023-06-11 04:11:04",
+            "name": "Ava",
+            "photo": ""
+          },
+          {
+            "id": 1,
+            "album_id": 1,
+            "stars": 4,
+            "comment": "推薦購買！",
+            "comment_time": "2023-04-19 08:21:18",
+            "name": "Mia",
+            "photo": ""
+          },
+          {
+            "id": 10,
+            "album_id": 1,
+            "stars": 5,
+            "comment": "真的是一張經典專輯！",
+            "comment_time": "2022-12-04 01:05:48",
+            "name": "Lucas",
+            "photo": ""
+          },
+          {
+            "id": 2,
+            "album_id": 1,
+            "stars": 5,
+            "comment": "非常喜歡這張專輯！",
+            "comment_time": "2022-10-07 18:23:03",
+            "name": "Olivia",
+            "photo": ""
+          },
+          {
+            "id": 6,
+            "album_id": 1,
+            "stars": 5,
+            "comment": "這張專輯真的太棒了！",
+            "comment_time": "2022-09-30 02:11:24",
+            "name": "John",
+            "photo": ""
+          },
+          {
+            "id": 7,
+            "album_id": 1,
+            "stars": 3,
+            "comment": "專輯設計很有特色。",
+            "comment_time": "2022-04-23 06:57:45",
+            "name": "Ethan",
+            "photo": ""
+          }
+        ])
+        break
+      case 'course':
+        setProduct([{
+          "id": 5,
+          "course_id": 1,
+          "stars": 4,
+          "comment": "老師的講解很有深度。",
+          "comment_time": "2021-11-17 14:37:47",
+          "name": "Ethan"
+        },
+        {
+          "id": 39,
+          "course_id": 1,
+          "stars": 2,
+          "comment": "希望能有更多實際練習。",
+          "comment_time": "2021-05-25 12:01:23",
+          "name": "Lucas"
+        },
+        {
+          "id": 49,
+          "course_id": 1,
+          "stars": 2,
+          "comment": "課程結構很完整，值得參加。",
+          "comment_time": "2021-04-19 03:33:19",
+          "name": "Lucas"
+        },
+        {
+          "id": 29,
+          "course_id": 1,
+          "stars": 2,
+          "comment": "希望課程能再深入一些。",
+          "comment_time": "2021-01-17 04:57:02",
+          "name": "Lucas"
+        },
+        {
+          "id": 19,
+          "course_id": 1,
+          "stars": 2,
+          "comment": "希望能有更多練習時間。",
+          "comment_time": "2020-11-06 12:19:10",
+          "name": "Lucas"
+        }])
+        break
+      default:
+        setProduct([])
+        break
+    }
+  }, [targetTableCondition])
+
+  // 抓取評價資料庫資料
+  // const getProduct = async (pid) => {
+  //   try {
+  //     const res = await fetch(
+  //       `https://nodal-buckeye-404908.de.r.appspot.com/api/evaluate/${targetTableCondition}/${pid}`
+  //     )
+  //     const data = await res.json()
+  //     // 設定到狀態中 -> 會觸發重新渲染(re-render)
+  //     setProduct(data)
+  //   } catch (e) {
+  //     // 這裡可以作錯誤處理
+
+  //     // setTimeout(() => {
+  //     //   setIsLoading(false)
+  //     // }, 2000)
+  //     alert('伺服器連線失敗')
+  //     console.error(e)
+  //   }
+  // }
+  // 以pid為參數，抓取評價資料庫資料，當pid改變時，重新抓取資料
+  // useEffect(() => {
+  //   const { pid } = router.query
+  //   getProduct(pid && Object.keys(pid).length > 0 ? pid : 1)
+  // }, [pid, shouldReload])
   // console.log(product)
 
   // 計算平均分數
@@ -125,7 +259,7 @@ export default function Evaluate() {
                                   <WriteArea
                                     userData={userData}
                                     product={product}
-                                    getProduct={getProduct}
+                                    //getProduct={getProduct}
                                     pid={pid}
                                     targetTableCondition={targetTableCondition}
                                     shouldReload={shouldReload}

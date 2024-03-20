@@ -16,24 +16,192 @@ export default function Ranking() {
   // API 抓回來的資料 <Statistic title="Feedback" value={1128} prefix={<LikeOutlined />} />
   const [trackinfo, setTrackinfo] = useState([])
   const [url, setUrl] = useState('https://nodal-buckeye-404908.de.r.appspot.com/api/ranking/')
-  const getTrackinfo = async () => {
-    try {
-      const res = await fetch(url)
-      // const res = await fetch('https://nodal-buckeye-404908.de.r.appspot.com/api/ranking/pop')
-      // console.log(res)
-      const data = await res.json()
-      // console.log(data)
-      setTrackinfo(data)
-    } catch (e) {
-      alert('伺服器連線失敗')
-      console.error(e)
-    }
-  }
+  // 需要啟動google啟動資料庫才可用此函示
+  // const getTrackinfo = async () => {
+  //   try {
+  //     const res = await fetch(url)
+  //     // const res = await fetch('https://nodal-buckeye-404908.de.r.appspot.com/api/ranking/pop')
+  //     // console.log(res)
+  //     const data = await res.json()
+  //     // console.log(data)
+  //     setTrackinfo(data)
+  //   } catch (e) {
+  //     alert('伺服器連線失敗')
+  //     console.error(e)
+  //   }
+  // }
   // console.log(trackinfo)
+  const rankingData = [
+    {
+      "id": 70,
+      "title": "The Eminem Show",
+      "artist": "Eminem",
+      "images": "R-250771-1672170001-7863.jpg",
+      "collectAccount": 11,
+      "audioSource": "BeastieBoys"
+    },
+    {
+      "id": 84,
+      "title": "The Marshall Mathers LP",
+      "artist": "Eminem",
+      "images": "R-142270-1408878908-2467.jpg",
+      "collectAccount": 10,
+      "audioSource": "MarshallMathers"
+    },
+    {
+      "id": 60,
+      "title": "Licensed to Ill",
+      "artist": "Beastie Boys",
+      "images": "R-708787-1202592368.jpg",
+      "collectAccount": 9,
+      "audioSource": "TORATORAW"
+    },
+    {
+      "id": 177,
+      "title": "Unravel",
+      "artist": "TK From 凛として時雨",
+      "images": "R-5925711-1406489072-8683.jpg",
+      "collectAccount": 8,
+      "audioSource": "BeastieBoys"
+    },
+    {
+      "id": 194,
+      "title": "Get Over",
+      "artist": "Dream",
+      "images": "R-2995380-1606312263-7853.jpg",
+      "collectAccount": 8,
+      "audioSource": "BeastieBoys"
+    },
+    {
+      "id": 238,
+      "title": "七転七起",
+      "artist": "ナナヲアカリ",
+      "images": "R-23991632-1658739052-8689.jpg",
+      "collectAccount": 8,
+      "audioSource": "BeastieBoys"
+    },
+    {
+      "id": 109,
+      "title": "心裡學",
+      "artist": "徐佳瑩",
+      "images": "R-11894080-1524282465-8964.jpg",
+      "collectAccount": 7,
+      "audioSource": "BeastieBoys"
+    },
+    {
+      "id": 183,
+      "title": "Answer",
+      "artist": "Flow",
+      "images": "R-10558023-1499865663-7274.jpg",
+      "collectAccount": 7,
+      "audioSource": "MarshallMathers"
+    },
+    {
+      "id": 158,
+      "title": "Yankee",
+      "artist": "米津玄師",
+      "images": "R-13043011-1548128371-2690.jpg",
+      "collectAccount": 7,
+      "audioSource": "BeastieBoys"
+    },
+    {
+      "id": 121,
+      "title": "魔杰座",
+      "artist": "周杰倫",
+      "images": "R-16672764-1609182621-7695.jpg",
+      "collectAccount": 7,
+      "audioSource": "BeastieBoys"
+    }
+  ]
+  const newData = [
+    {
+      "id": 238,
+      "title": "七転七起",
+      "artist": "ナナヲアカリ",
+      "images": "R-23991632-1658739052-8689.jpg",
+      "collectAccount": 8,
+      "audioSource": "https://www.youtube.com/embed/VaAacrLk4gE?si=W1Wkle8J9tu600ko"
+    },
+    {
+      "id": 194,
+      "title": "Get Over",
+      "artist": "Dream",
+      "images": "R-2995380-1606312263-7853.jpg",
+      "collectAccount": 8,
+      "audioSource": "https://www.youtube.com/embed/VaAacrLk4gE?si=W1Wkle8J9tu600ko"
+    },
+    {
+      "id": 107,
+      "title": "期待",
+      "artist": "林志穎",
+      "images": "R-15757420-1597240316-5228.jpg",
+      "collectAccount": 7,
+      "audioSource": "https://www.youtube.com/embed/VaAacrLk4gE?si=W1Wkle8J9tu600ko"
+    },
+    {
+      "id": 109,
+      "title": "心裡學",
+      "artist": "徐佳瑩",
+      "images": "R-11894080-1524282465-8964.jpg",
+      "collectAccount": 7,
+      "audioSource": "https://www.youtube.com/embed/VaAacrLk4gE?si=W1Wkle8J9tu600ko"
+    },
+    {
+      "id": 143,
+      "title": "哎呦，不錯哦",
+      "artist": "周杰倫",
+      "images": "R-14739190-1580643666-9224.jpg",
+      "collectAccount": 7,
+      "audioSource": "https://www.youtube.com/embed/VaAacrLk4gE?si=W1Wkle8J9tu600ko"
+    },
+    {
+      "id": 45,
+      "title": "Fly",
+      "artist": "Dixie Chicks",
+      "images": "R-927614-1451595365-4438.jpg",
+      "collectAccount": 7,
+      "audioSource": "https://www.youtube.com/embed/VaAacrLk4gE?si=W1Wkle8J9tu600ko"
+    },
+    {
+      "id": 158,
+      "title": "Yankee",
+      "artist": "米津玄師",
+      "images": "R-13043011-1548128371-2690.jpg",
+      "collectAccount": 7,
+      "audioSource": "https://www.youtube.com/embed/VaAacrLk4gE?si=W1Wkle8J9tu600ko"
+    },
+    {
+      "id": 155,
+      "title": "Stray Sheep",
+      "artist": "米津玄師",
+      "images": "R-15728633-1596700784-4995.jpg",
+      "collectAccount": 7,
+      "audioSource": "https://www.youtube.com/embed/VaAacrLk4gE?si=W1Wkle8J9tu600ko"
+    },
+    {
+      "id": 75,
+      "title": "Falling Into You",
+      "artist": "Celine Dion",
+      "images": "R-1069960-1548453366-3129.jpg",
+      "collectAccount": 7,
+      "audioSource": "https://www.youtube.com/embed/VaAacrLk4gE?si=W1Wkle8J9tu600ko"
+    },
+    {
+      "id": 121,
+      "title": "魔杰座",
+      "artist": "周杰倫",
+      "images": "R-16672764-1609182621-7695.jpg",
+      "collectAccount": 7,
+      "audioSource": "https://www.youtube.com/embed/VaAacrLk4gE?si=W1Wkle8J9tu600ko"
+    }
+  ]
+    useEffect(() => {
+      setTrackinfo(rankingData)
+  }, [])
+  const getTrackinfo = () => { setTrackinfo(newData) }
 
-  useEffect(() => {
-    getTrackinfo()
-  }, [url])
+
+
 
   //原本的樣子 image: `/product/album/R-18911899-1622164711-5894.jpg`,
   // 對trackinfo的image加上前綴
@@ -162,7 +330,7 @@ export default function Ranking() {
               className="btn btn-secondary text-info"
               onClick={() => {
                 setUrl('https://nodal-buckeye-404908.de.r.appspot.com/api/ranking/')
-                getTrackinfo()
+                setTrackinfo(rankingData)
               }}
             >
               <h3 className="m-0">總排行</h3>

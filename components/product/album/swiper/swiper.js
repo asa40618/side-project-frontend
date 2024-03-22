@@ -1,9 +1,7 @@
 import React from 'react'
-import SwiperCore, { EffectCoverflow, Pagination } from 'swiper'
+// import  { EffectCoverflow, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/swiper-bundle.css'
-
-SwiperCore.use([EffectCoverflow, Pagination])
 
 // 使用方法：
 // <CustomSwiper cards={cards} slidesPerView={'2'} spaceBetween = '30' />;

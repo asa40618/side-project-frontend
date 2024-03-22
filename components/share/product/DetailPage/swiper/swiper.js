@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { EffectCoverflow, Pagination, Navigation } from 'swiper'
-// import { SwiperSlide } from 'swiper/react'
+// import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules'
 import 'swiper/swiper-bundle.css'
 // import {Navigation  } from 'swiper'
 
-SwiperCore.use([EffectCoverflow, Pagination, Navigation])
+// SwiperCore.use([EffectCoverflow, Pagination, Navigation])
 
 const CustomSwiper = ({
   cards = [],

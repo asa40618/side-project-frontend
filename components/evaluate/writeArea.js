@@ -48,10 +48,10 @@ export default function WriteArea({
   const hasCommentArray = commentGet.filter((v) => v.member_id === userData.id)
   const hasComment = hasCommentArray.length > 0 ? true : false
 
-  useEffect(() => {
-    orderCheck()
-    commentCheck()
-  }, [pid])
+  // useEffect(() => {
+  //   orderCheck()
+  //   commentCheck()
+  // }, [pid])
   // console.log(hasOrder)
   // console.log(hasComment)
 

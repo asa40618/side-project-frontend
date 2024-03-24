@@ -8,7 +8,7 @@ import OrderContent from './order-content'
 import { useAuthJWT } from '@/hooks/use-auth-jwt'
 import axios from 'axios'
 export default function Order() {
-  const { authJWT, setAuthJWT } = useAuthJWT()
+  const { authJWT } = useAuthJWT()
   // 讀取中狀態
   const [isLoading, setIsLoading] = useState(true)
   const [userData, setUserData] = useState({
@@ -29,38 +29,38 @@ export default function Order() {
   })
   const [data, setData] = useState({})
   // 取的user資料
-  const getUserData = async (id) => {
-    const res = await axios.get('https://nodal-buckeye-404908.de.r.appspot.com/api/users/' + `${id}`)
+  // const getUserData = async (id) => {
+  //   const res = await axios.get('https://nodal-buckeye-404908.de.r.appspot.com/api/users/' + `${id}`)
 
-    if (res.data.message === 'success') {
-      // console.log(res.data.user)
-      setUserData(res.data.user)
-    }
-  }
-  useEffect(() => {
-    const id = authJWT.userData.id
-    // console.log(id)
-    getUserData(id).then(() => {
-      setIsLoading(false)
-      fetchData(id)
-    })
-  }, [authJWT.userData])
+  //   if (res.data.message === 'success') {
+  //     // console.log(res.data.user)
+  //     setUserData(res.data.user)
+  //   }
+  // }
+  // useEffect(() => {
+  //   const id = authJWT.userData.id
+  //   // console.log(id)
+  //   getUserData(id).then(() => {
+  //     setIsLoading(false)
+  //     fetchData(id)
+  //   })
+  // }, [authJWT.userData])
 
   // 訂單資料
   // 取得資料用
-  const fetchData = async (id) => {
-    // 使用异步操作获取数据
-    // 例如：const result = await yourApiCall();
-    // 更新 data 和 totalRows
-    // setData(result.data); // 更新数据
-    // setTotalRows(result.totalRows); // 更新记录数量
-    const res = await axios.get(
-      'https://nodal-buckeye-404908.de.r.appspot.com/api/users/order/' + `${id}`
-    )
-    // console.log(res.data)
+  // const fetchData = async (id) => {
+  //   // 使用异步操作获取数据
+  //   // 例如：const result = await yourApiCall();
+  //   // 更新 data 和 totalRows
+  //   // setData(result.data); // 更新数据
+  //   // setTotalRows(result.totalRows); // 更新记录数量
+  //   const res = await axios.get(
+  //     'https://nodal-buckeye-404908.de.r.appspot.com/api/users/order/' + `${id}`
+  //   )
+  //   // console.log(res.data)
 
-    setData(res.data)
-  }
+  //   setData(res.data)
+  // }
 
   // 手機板List
   const mbList = (

@@ -46,28 +46,28 @@ export default function Singer() {
   const [teacherData, setTeacherData] = useState({})
   const [courseOfTeacher, setCourseOfTeacher] = useState([])
   const imageSrc = `/figure/teacher/${teacherData.photo}`
-  //ccc
-  useEffect(() => {
-    if (tid) {
-      axios
-        .get(`https://nodal-buckeye-404908.de.r.appspot.com/api/teacher/${tid}`)
-        .then((response) => {
-          setTeacherData(response.data[0])
-        })
-        .catch((error) => {
-          console.error('Error:', error)
-        })
-      axios
-        .get(`https://nodal-buckeye-404908.de.r.appspot.com/api/teacher/${tid}/courses`)
-        .then((response) => {
-          setCourseOfTeacher(response.data)
-          // console.log(response.data)
-        })
-        .catch((error) => {
-          console.error('Error:', error)
-        })
-    }
-  }, [tid])
+  // //ccc
+  // useEffect(() => {
+  //   if (tid) {
+  //     axios
+  //       .get(`https://nodal-buckeye-404908.de.r.appspot.com/api/teacher/${tid}`)
+  //       .then((response) => {
+  //         setTeacherData(response.data[0])
+  //       })
+  //       .catch((error) => {
+  //         console.error('Error:', error)
+  //       })
+  //     axios
+  //       .get(`https://nodal-buckeye-404908.de.r.appspot.com/api/teacher/${tid}/courses`)
+  //       .then((response) => {
+  //         setCourseOfTeacher(response.data)
+  //         // console.log(response.data)
+  //       })
+  //       .catch((error) => {
+  //         console.error('Error:', error)
+  //       })
+  //   }
+  // }, [tid])
 
   //ddd
   const cards = [

@@ -45,46 +45,46 @@ function PageEvent() {
   // const { isReady, asPath } = router
   // const pathname = asPath.split('?')[0]
 
-  useEffect(() => {
-    if (!router.isReady) return // 確保路由已經準備好
+  // useEffect(() => {
+  //   if (!router.isReady) return // 確保路由已經準備好
 
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `https://nodal-buckeye-404908.de.r.appspot.com/api/course/${pid}`
-        )
-        if (response.status === 200) {
-          console.log(response.data)
-          seteventData(response.data)
-          setIsLoading(false)
-        }
-      } catch (error) {
-        console.error('資料獲取失敗:', error)
-      }
-    }
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         `https://nodal-buckeye-404908.de.r.appspot.com/api/course/${pid}`
+  //       )
+  //       if (response.status === 200) {
+  //         console.log(response.data)
+  //         seteventData(response.data)
+  //         setIsLoading(false)
+  //       }
+  //     } catch (error) {
+  //       console.error('資料獲取失敗:', error)
+  //     }
+  //   }
 
-    const courseChapterData = async () => {
-      try {
-        const response = await axios.get(
-          `https://nodal-buckeye-404908.de.r.appspot.com/api/course/courseChapter/${pid}`
-        )
-        if (response.status === 200) {
-          console.log(response.data)
-          setCourseChapter(response.data)
-          setIsLoading(false)
-        }
-      } catch (error) {
-        console.error('資料獲取失敗:', error)
-      }
-    }
+  //   const courseChapterData = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         `https://nodal-buckeye-404908.de.r.appspot.com/api/course/courseChapter/${pid}`
+  //       )
+  //       if (response.status === 200) {
+  //         console.log(response.data)
+  //         setCourseChapter(response.data)
+  //         setIsLoading(false)
+  //       }
+  //     } catch (error) {
+  //       console.error('資料獲取失敗:', error)
+  //     }
+  //   }
 
-    // if (router.isReady) {
-    // 確保pid存在再進行fetch
-    courseChapterData()
-    fetchData()
-    console.log(eventData)
-    // }
-  }, [pid, router.isReady]) // 注意這裡，我將pid加入到依賴列表中
+  //   // if (router.isReady) {
+  //   // 確保pid存在再進行fetch
+  //   courseChapterData()
+  //   fetchData()
+  //   console.log(eventData)
+  //   // }
+  // }, [pid, router.isReady]) // 注意這裡，我將pid加入到依賴列表中
   // console.log(eventData)
   // const { img, name, directions, price, teacherName } = eventData
   // console.log(eventData)

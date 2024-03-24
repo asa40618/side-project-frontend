@@ -18,23 +18,23 @@ const categoryMapping = {
 function AlbumCategories(props) {
   const [categories, setCategories] = useState([])
 
-  useEffect(() => {
-    if (props.id) {
-      axios
-        .get(`https://nodal-buckeye-404908.de.r.appspot.com/api/album/${props.id}/categories`)
-        .then((response) => {
-          // 將categoryId映射為音樂類型
-          const mappedCategories = response.data.map((row) => ({
-            categoryId: row.category_id,
-            categoryType: categoryMapping[row.category_id] || '未知類型',
-          }))
-          setCategories(mappedCategories)
-        })
-        .catch((error) => {
-          console.error('Error:', error)
-        })
-    }
-  }, [props.id])
+  // useEffect(() => {
+  //   if (props.id) {
+  //     axios
+  //       .get(`https://nodal-buckeye-404908.de.r.appspot.com/api/album/${props.id}/categories`)
+  //       .then((response) => {
+  //         // 將categoryId映射為音樂類型
+  //         const mappedCategories = response.data.map((row) => ({
+  //           categoryId: row.category_id,
+  //           categoryType: categoryMapping[row.category_id] || '未知類型',
+  //         }))
+  //         setCategories(mappedCategories)
+  //       })
+  //       .catch((error) => {
+  //         console.error('Error:', error)
+  //       })
+  //   }
+  // }, [props.id])
 
   return (
     <>

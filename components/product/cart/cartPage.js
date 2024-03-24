@@ -47,23 +47,50 @@ export default function CartPage({ totalAmount, setTotalAmount }) {
   } = useTicketCart()
 
   //找優惠券
-  const [coupons, setCoupons] = useState([]); // 初始化为空数组
+  const [coupons, setCoupons] = useState([
+    {
+        "id": 1,
+        "discountName": "滿千折一百",
+        "countType": 1,
+        "discount": 100,
+        "discountCode": "HHH100",
+        "minimum": 1000,
+        "startDate": "2023-07-07",
+        "endDate": "2023-11-30",
+        "enable": 0,
+        "created_at": "2023-07-17 16:09:58",
+        "valid": 1
+    },
+    {
+        "id": 3,
+        "discountName": "會員註冊五十折價",
+        "countType": 1,
+        "discount": 50,
+        "discountCode": "register50",
+        "minimum": 0,
+        "startDate": "2023-09-30",
+        "endDate": "2023-10-31",
+        "enable": 1,
+        "created_at": "2023-07-07 10:48:59",
+        "valid": 1
+    }
+]); // 初始化为空数组
   // const [couponOptions, setCouponOptions] = useState(coupons)
   const [selectedCouponId, setSelectedCouponId] = useState(0)
   const [netTotal, setNetTotal] = useState(0)
   
 
-  useEffect(() => {
-    // 在组件加载时获取優惠券数据
-    axios.get('https://nodal-buckeye-404908.de.r.appspot.com/api/cart/coupon')
-      .then(response => {
-        const couponsData = response.data;
-        setCoupons(couponsData);
-      })
-      .catch(error => {
-        console.error('发生错误：', error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   // 在组件加载时获取優惠券数据
+  //   axios.get('https://nodal-buckeye-404908.de.r.appspot.com/api/cart/coupon')
+  //     .then(response => {
+  //       const couponsData = response.data;
+  //       setCoupons(couponsData);
+  //     })
+  //     .catch(error => {
+  //       console.error('发生错误：', error);
+  //     });
+  // }, []);
 
   // 计算折扣后的总金额
   // useEffect(() => {

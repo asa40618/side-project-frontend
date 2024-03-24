@@ -40,40 +40,65 @@ export default function LoginForm() {
     setShowPassword(!showPassword)
   }
   // 表單送出
-  // async function handleSubmit() {
-  //   // console.log(formData)
-  //   const res = await axios.post(
-  //     'https://nodal-buckeye-404908.de.r.appspot.com/api/member/login',
-  //     {
-  //       // account: 'emma_lee123',
-  //       // password: '12345',
-  //       ...formData,
-  //     },
-  //     {
-  //       withCredentials: true, // save cookie in browser
-  //     }
-  //   )
-  //   // 取得訊息、通行證
-  //   console.log(res.data)
-  //   // 解析通行證內容
-  //   // console.log(parseJwt(res.data.accessToken))
-  //   //判斷帳號密碼
-  //   console.log(typeof res.data.message)
-  //   if (res.data.message === '帳號密碼錯誤') {
-  //     setMsgErrorHtml(res.data.message)
-  //   } else {
-  //     setMsgErrorHtml('')
-  //   }
+  async function handleSubmit() {
+    // console.log(formData)
+    // const res = await axios.post(
+    //   'https://nodal-buckeye-404908.de.r.appspot.com/api/member/login',
+    //   {
+    //     // account: 'emma_lee123',
+    //     // password: '12345',
+    //     ...formData,
+    //   },
+    //   {
+    //     withCredentials: true, // save cookie in browser
+    //   }
+    // )
+    // 取得訊息、通行證
+    // console.log(res.data)
+    // 解析通行證內容
+    // console.log(parseJwt(res.data.accessToken))
+    //判斷帳號密碼
+    // console.log(typeof res.data.message)
+    // if (res.data.message === '帳號密碼錯誤') {
+    //   setMsgErrorHtml(res.data.message)
+    // } else {
+    //   setMsgErrorHtml('')
+    // }
 
-  //   // 設定cookie
-  //   Cookies.set('accessToken', res.data.accessToken, { expires: 1 })
-  //   if (res.data.message === 'success') {
-  //     setAuthJWT({
-  //       isAuth: true,
-  //       userData: parseJwt(res.data.accessToken),
-  //     })
-  //   }
-  // }
+    // 設定cookie
+    // Cookies.set('accessToken', res.data.accessToken, { expires: 1 })
+    // if (res.data.message === 'success') {
+    //   setAuthJWT({
+    //     isAuth: true,
+    //     userData: parseJwt(res.data.accessToken),
+    //   })
+    // }
+    const superAdmin = { account: 'superAdmin', password: '12345' }
+    if (
+      formData.account === superAdmin.account &&
+      formData.password === superAdmin.password
+    ) {
+      setAuthJWT({
+        isAuth: true,
+        userData: {
+          account: 'superAdmin',
+          address: '1234 Main Street, Citytown, COUNTRY',
+          birthday: '1985-07-28',
+          created_at: '2023-03-22T08:30:00Z',
+          email: 'user12345@example.com',
+          gender: 'male',
+          id: 1,
+          name: 'John Doe',
+          phone: '+12345678900',
+          photo: 'boy_avatar_icon_148455.png',
+          status: 'active',
+          iat: 1617187200,
+          exp: 1617273600,
+        },
+      })
+      return
+    }
+  }
   // 改變input內容
   const handleInputChange = (event) => {
     const { name, value } = event.target
@@ -85,7 +110,7 @@ export default function LoginForm() {
   // 點擊送出
   const loginBtnClick = (e) => {
     e.preventDefault()
-    // handleSubmit()
+    handleSubmit()
   }
   if (authJWT.isAuth) {
     router.push('/')
@@ -122,7 +147,11 @@ export default function LoginForm() {
                 />
                 <label htmlFor="password">密碼</label>
                 {/* showPassword圖示 */}
-                <span onClick={showPasswordClick} className={`${style.show}`} aria-hidden="true" >
+                <span
+                  onClick={showPasswordClick}
+                  className={`${style.show}`}
+                  aria-hidden="true"
+                >
                   {showPassword ? <PiEyeBold /> : <PiEyeClosedBold />}
                 </span>
               </div>

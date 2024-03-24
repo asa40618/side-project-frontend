@@ -78,36 +78,36 @@ export const AuthProviderJWT = ({ children }) => {
   ]
 
   // 檢查會員認証用
-  // const checkAuth = async () => {
-  //   const res = await axios.post(
-  //     'https://nodal-buckeye-404908.de.r.appspot.com/api/member/check-login',
-  //     { accessToken: Cookies.get('accessToken') },
-  //     {
-  //       withCredentials: true,
-  //     }
-  //   )
-  //   // console.log(res)
-  //   if (res.data.message === 'authorized') {
-  //     setAuthJWT({ isAuth: true, userData: res.data.user })
-  //   }
-  //   // 可以在這裡實作跳轉
-  //   else {
-  //     if (protectedRoutes.includes(router.pathname)) {
-  //       router.push(loginRoute)
-  //     }
-  //   }
-  // }
+  const checkAuth = async () => {
+    const res = await axios.post(
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/member/check-login',
+      { accessToken: Cookies.get('accessToken') },
+      {
+        withCredentials: true,
+      }
+    )
+    // console.log(res)
+    if (res.data.message === 'authorized') {
+      setAuthJWT({ isAuth: true, userData: res.data.user })
+    }
+    // 可以在這裡實作跳轉
+    else {
+      if (protectedRoutes.includes(router.pathname)) {
+        router.push(loginRoute)
+      }
+    }
+  }
 
   // didMount(初次渲染)後，向伺服器要求檢查會員是否登入中
-  useEffect(() => {
-    if (router.isReady && !authJWT.isAuth) {
-      // checkAuth()
-    }
-    // 下面加入router.pathname，是為了要在向伺服器檢查後，
-    // 如果有比對到是隱私路由，就執行跳轉到登入頁面工作
-    // 注意有可能會造成向伺服器要求多次，此為簡單的實作範例
-    // eslint-disable-next-line
-  }, [router.isReady, router.pathname])
+  // useEffect(() => {
+  //   if (router.isReady && !authJWT.isAuth) {
+  //     checkAuth()
+  //   }
+  //   // 下面加入router.pathname，是為了要在向伺服器檢查後，
+  //   // 如果有比對到是隱私路由，就執行跳轉到登入頁面工作
+  //   // 注意有可能會造成向伺服器要求多次，此為簡單的實作範例
+  //   // eslint-disable-next-line
+  // }, [router.isReady, router.pathname])
 
   return (
     <AuthContextJWT.Provider

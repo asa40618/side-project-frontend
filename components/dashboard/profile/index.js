@@ -33,22 +33,26 @@ export default function ProfileContent() {
   // 設定狀態
   // 讀取中狀態
   const [isLoading, setIsLoading] = useState(true)
-  const [userData, setUserData] = useState({
-    account: '',
-    address: '',
-    birthday: '',
-    created_at: '',
-    password: '',
-    email: '',
-    gender: '',
-    id: 0,
-    name: '',
-    phone: '',
-    photo: '',
-    status: '',
-    iat: 0,
-    exp: 0,
-  })
+  const [userData, setUserData] = useState(
+    {
+      "message": "success",
+      "code": "200",
+      "user": {
+          "id": 1,
+          "name": "Emma",
+          "account": "emma_lee123",
+          "password": "12345",
+          "gender": "male",
+          "birthday": "1990-09-12",
+          "email": "emma_lee@example.com",
+          "address": "台北市中山區林森北路123號",
+          "phone": "0912355555",
+          "created_at": "2023-04-20 19:53:21",
+          "status": "1",
+          "photo": "boy_avatar_icon_148455.png"
+      }
+  }
+  )
   const [userEditData, setUserEditData] = useState({
     account: '',
     address: '',
@@ -102,19 +106,18 @@ export default function ProfileContent() {
     const res = await axios.get('https://nodal-buckeye-404908.de.r.appspot.com/api/users/' + `${id}`)
 
     if (res.data.message === 'success') {
-      console.log(res.data.user)
       setUserData(res.data.user)
       setUserEditData(res.data.user)
       addKeyValue('rePassword', '')
     }
   }
-  useEffect(() => {
-    const id = authJWT.userData.id
-    // console.log(id)
-    getUserData(id).then(() => {
-      setIsLoading(false)
-    })
-  }, [authJWT.userData])
+  // useEffect(() => {
+  //   const id = authJWT.userData.id
+  //   // console.log(id)
+  //   getUserData(id).then(() => {
+  //     setIsLoading(false)
+  //   })
+  // }, [authJWT.userData])
   // 更換UserEditData的value到指定key
   function updateValueByKey(key, value) {
     setUserEditData((prevUser) => {
@@ -181,92 +184,92 @@ export default function ProfileContent() {
     }
   }
   // 表單送出
-  // async function handleSubmit() {
-  //   const id = userData.id
+  async function handleSubmit() {
+    const id = userData.id
 
-  //   // 圖片上傳
-  //   const formData = new FormData()
-  //   formData.append('photo', selectedImage)
-  //   try {
-  //     const res = await axios.post(
-  //       'https://nodal-buckeye-404908.de.r.appspot.com/api/users/upload',
-  //       formData,
-  //       {
-  //         headers: {
-  //           'Content-Type': 'multipart/form-data',
-  //         },
-  //       }
-  //     )
-  //     console.log(res)
-  //     if (res.data.message == 'success') {
-  //       userEditData.photo = res.data.photo
-  //     }
-  //   } catch (error) {
-  //     console.error('Error uploading image:', error)
-  //   }
+    // 圖片上傳
+    const formData = new FormData()
+    formData.append('photo', selectedImage)
+    try {
+      const res = await axios.post(
+        'https://nodal-buckeye-404908.de.r.appspot.com/api/users/upload',
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      )
+      console.log(res)
+      if (res.data.message == 'success') {
+        userEditData.photo = res.data.photo
+      }
+    } catch (error) {
+      console.error('Error uploading image:', error)
+    }
 
-  //   // 更新會員資料
-  //   const res = await axios.put(
-  //     'https://nodal-buckeye-404908.de.r.appspot.com/api/users/' + `${id}`,
+    // 更新會員資料
+    const res = await axios.put(
+      'https://nodal-buckeye-404908.de.r.appspot.com/api/users/' + `${id}`,
 
-  //     {
-  //       userEditData,
-  //       userData,
-  //     }
-  //   )
-  //   // API回傳訊息
-  //   // console.log(res.data)
-  //   if (res.data.message === 'fail') {
-  //     if (res.data.errors && Object.keys(res.data.errors).length > 0) {
-  //       // 存在 errors 对象并且它包含至少一个错误消息
-  //       // 在这里处理错误
-  //       const errors = res.data.errors
-  //       setEditNameError(errors.name)
-  //       setEditPasswordError(errors.password)
-  //       setEditRepasswordError(errors.rePassword)
-  //       setEditPhoneError(errors.phone)
-  //       setEditAddressError(errors.address)
-  //       setEditBirthdayError(errors.birthday)
-  //       setSystem('修改失敗')
-  //     }
-  //   }
+      {
+        userEditData,
+        userData,
+      }
+    )
+    // API回傳訊息
+    // console.log(res.data)
+    if (res.data.message === 'fail') {
+      if (res.data.errors && Object.keys(res.data.errors).length > 0) {
+        // 存在 errors 对象并且它包含至少一个错误消息
+        // 在这里处理错误
+        const errors = res.data.errors
+        setEditNameError(errors.name)
+        setEditPasswordError(errors.password)
+        setEditRepasswordError(errors.rePassword)
+        setEditPhoneError(errors.phone)
+        setEditAddressError(errors.address)
+        setEditBirthdayError(errors.birthday)
+        setSystem('修改失敗')
+      }
+    }
 
-  //   if (res.data.message === 'success') {
-  //     const res = await axios.post(
-  //       'https://nodal-buckeye-404908.de.r.appspot.com/api/member/login',
+    if (res.data.message === 'success') {
+      const res = await axios.post(
+        'https://nodal-buckeye-404908.de.r.appspot.com/api/member/login',
 
-  //       {
-  //         account: userData.account,
-  //         password: userData.password,
-  //       },
-  //       {
-  //         withCredentials: true, // save cookie in browser
-  //       }
-  //     )
-  //     // 取得訊息、通行證
-  //     console.log(res.data)
-  //     // 解析通行證內容
-  //     // console.log(parseJwt(res.data.accessToken))
+        {
+          account: userData.account,
+          password: userData.password,
+        },
+        {
+          withCredentials: true, // save cookie in browser
+        }
+      )
+      // 取得訊息、通行證
+      console.log(res.data)
+      // 解析通行證內容
+      // console.log(parseJwt(res.data.accessToken))
 
-  //     // 設定cookie
-  //     Cookies.set('accessToken', res.data.accessToken, { expires: 1 })
-  //     if (res.data.message === 'success') {
-  //       setAuthJWT({
-  //         isAuth: true,
-  //         userData: parseJwt(res.data.accessToken),
-  //       })
-  //     }
+      // 設定cookie
+      Cookies.set('accessToken', res.data.accessToken, { expires: 1 })
+      if (res.data.message === 'success') {
+        setAuthJWT({
+          isAuth: true,
+          userData: parseJwt(res.data.accessToken),
+        })
+      }
 
-  //     setEdit(false)
-  //     setSystem('修改成功')
-  //     setEditNameError(undefined)
-  //     setEditPasswordError(undefined)
-  //     setEditRepasswordError(undefined)
-  //     setEditPhoneError(undefined)
-  //     setEditAddressError(undefined)
-  //     setEditBirthdayError(undefined)
-  //   }
-  // }
+      setEdit(false)
+      setSystem('修改成功')
+      setEditNameError(undefined)
+      setEditPasswordError(undefined)
+      setEditRepasswordError(undefined)
+      setEditPhoneError(undefined)
+      setEditAddressError(undefined)
+      setEditBirthdayError(undefined)
+    }
+  }
 
   // 設定時的內容
   const Settings = (

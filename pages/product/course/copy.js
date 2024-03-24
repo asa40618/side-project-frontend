@@ -16,20 +16,20 @@ export default function EventManagement() {
 
   const { addCourse } = useCourseCart()
 
-  useEffect(() => {
-    // 获取课程数据
-    fetch('https://nodal-buckeye-404908.de.r.appspot.com/api/course')
-      .then((response) => response.json())
-      .then((data) => {
-        setCourseData(data)
-        // 对数据进行默认排序
-        const sortedData = sortCourseData(data, sortType)
-        setSelectedEvents(sortedData)
-      })
-      .catch((error) => {
-        console.error('发生错误：', error)
-      })
-  }, [sortType])
+  // useEffect(() => {
+  //   // 获取课程数据
+  //   fetch('https://nodal-buckeye-404908.de.r.appspot.com/api/course')
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setCourseData(data)
+  //       // 对数据进行默认排序
+  //       const sortedData = sortCourseData(data, sortType)
+  //       setSelectedEvents(sortedData)
+  //     })
+  //     .catch((error) => {
+  //       console.error('发生错误：', error)
+  //     })
+  // }, [sortType])
 
   const sortCourseData = (data, type) => {
     let sortedData = [...data]

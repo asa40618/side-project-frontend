@@ -22,9 +22,9 @@ export default function Like({ product, id, is_favorite }) {
     }
     setLike(!like)
   }
-  useEffect(() => {
-    setLike(is_favorite)
-  }, [])
+  // useEffect(() => {
+  //   setLike(is_favorite)
+  // }, [])
 
   const addLike = async () => {
     const res = await axios.put(

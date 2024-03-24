@@ -28,18 +28,18 @@ export default function Singer() {
   const [singerData, setSingerData] = useState({})
   const imageSrc = `/figure/singer/${singerData.img}`
   //ccc
-  useEffect(() => {
-    if (sid) {
-      axios
-        .get(`https://nodal-buckeye-404908.de.r.appspot.com/api/singer/${sid}`)
-        .then((response) => {
-          setSingerData(response.data[0])
-        })
-        .catch((error) => {
-          console.error('Error:', error)
-        })
-    }
-  }, [sid])
+  // useEffect(() => {
+  //   if (sid) {
+  //     axios
+  //       .get(`https://nodal-buckeye-404908.de.r.appspot.com/api/singer/${sid}`)
+  //       .then((response) => {
+  //         setSingerData(response.data[0])
+  //       })
+  //       .catch((error) => {
+  //         console.error('Error:', error)
+  //       })
+  //   }
+  // }, [sid])
 
   const cards = [
     AlbumCard4,
